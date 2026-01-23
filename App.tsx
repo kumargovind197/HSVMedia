@@ -7,7 +7,7 @@ import Hero from './components/Hero';
 import { PublishersPage, AdvertisersPage, CompanyPage, LoginPage, RegistrationPage } from './components/ContentSections';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
-import { WhoAreWe } from './components/HomeSections';
+// import { WhoAreWe } from './components/HomeSections';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -35,7 +35,7 @@ function App() {
             <Hero />
             {/* <Services /> */}
             {/* <SignupBanner onNavigate={setCurrentPage} /> */}
-            <WhoAreWe />
+            {/* <WhoAreWe /> */}
             {/* <Partners />
             <MapSection /> */}
             <ContactForm />

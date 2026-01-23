@@ -21,58 +21,6 @@ interface SectionProps {
 
 /* --- WHO ARE WE SECTION --- */
 
-export const WhoAreWe = () => (
-  <section id="about" className="py-20 bg-[#eff1f2]">
-    <div className="max-w-6xl mx-auto px-4 text-center">
-
-      <h2 className="text-3xl md:text-4xl font-medium text-[#337ab7] mb-6">
-        Who are we
-      </h2>
-
-      <p className="text-slate-600 text-lg max-w-3xl mx-auto mb-16">
-        Team HSV Media is your advertising partner, helping brands grow through
-        performance-driven and scalable advertising solutions.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-        <div>
-          <Store size={40} className="mx-auto text-[#2fa4e7] mb-4" />
-          <h3 className="text-xl font-medium mb-3">
-            At your service since 2010
-          </h3>
-          <p className="text-slate-600 text-sm leading-6">
-            HSV Media is an and flexible company that adapts to the
-            evolving needs of advertisers and publishers.
-          </p>
-        </div>
-
-        <div>
-          <Award size={40} className="mx-auto text-[#2fa4e7] mb-4" />
-          <h3 className="text-xl font-medium mb-3">
-            Innovation creators
-          </h3>
-          <p className="text-slate-600 text-sm leading-6">
-            We design and optimize impactful ad formats with a clear focus on
-            performance and partner profitability.
-          </p>
-        </div>
-
-        <div>
-          <Users size={40} className="mx-auto text-[#2fa4e7] mb-4" />
-          <h3 className="text-xl font-medium mb-3">
-            A dedicated team
-          </h3>
-          <p className="text-slate-600 text-sm leading-6">
-            Our team provides tailored support for local and international
-            campaigns, publishers, and traffic strategies.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-);
 
 /* --- PARTNERS SECTION --- */
 // export const Partners = () => (

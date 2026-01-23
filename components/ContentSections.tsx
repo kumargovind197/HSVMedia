@@ -227,33 +227,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => (
       </div>
     </section>
 
-    {/* How It Works */}
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-5xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-12">How It Works</h2>
-
-        <div className="grid md:grid-cols-3 gap-12">
-          <div>
-            <span className="text-[#2fa4e7] text-4xl font-bold">1</span>
-            <h4 className="font-semibold mt-3">Register</h4>
-            <p className="text-gray-600">Create your publisher account.</p>
-          </div>
-
-          <div>
-            <span className="text-[#2fa4e7] text-4xl font-bold">2</span>
-            <h4 className="font-semibold mt-3">Integrate</h4>
-            <p className="text-gray-600">Add our ad code to your website.</p>
-          </div>
-
-          <div>
-            <span className="text-[#2fa4e7] text-4xl font-bold">3</span>
-            <h4 className="font-semibold mt-3">Earn</h4>
-            <p className="text-gray-600">Start generating revenue from your traffic.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+  
     {/* CTA */}
     <section className="py-20 text-center">
       
@@ -283,7 +257,7 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
         </h1>
         <p className="text-lg md:text-xl text-white/90 mb-8">
           We help brands and agencies grow with data-driven advertising campaigns
-          focused on traffic, leads, and conversions.
+          
         </p>
         <button
           onClick={() => onNavigate && onNavigate('contact')}
@@ -300,19 +274,20 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
         Banner Advertising
       </h2>
       <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-        High-impact banner ads designed to increase brand visibility and attract
-        quality clicks across premium websites.
+       Our banner ad placements are designed to stop the scroll and build brand recognition while driving clicks.
       </p>
 
       <div className="grid md:grid-cols-3 gap-8">
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
           <h3 className="font-semibold text-lg mb-4">Key Features</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm">
-            <li>Static, animated, and rich media banners</li>
-            <li>Multiple standard sizes for broad placement</li>
-            <li>Ads shown on relevant, high-traffic websites</li>
-            <li>Audience and retargeting-based delivery</li>
-          </ul>
+            <li>Static, animated, and rich media banners
+</li>
+            <li>Multiple sizes for maximum placement coverage</li>
+            <li>Placement on relevant, high-traffic websites</li>
+            <li>Retargeting and audience-based targeting</li>
+          </ul><br/>
+          <h2>Best for: Brand awareness, product launches, retargeting campaigns</h2>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -350,15 +325,16 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
           Text Advertising
         </h2>
         <p className="text-gray-600 mb-6">
-          Text ads help you reach users when they are actively searching or
-          engaging with relevant content.
+          Text ads deliver results by reaching users at the moment of intent. These ads allow you to present your message quickly and effectively in search engines, and banner text ads. 
         </p>
         <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-          <li>Keyword and context-based targeting</li>
-          <li>Clear headlines with strong call-to-actions</li>
-          <li>Simple, distraction-free ad format</li>
-          <li>Ideal for leads, sales, and direct response campaigns</li>
+          <li>Keyword-targeted and contextual placements</li>
+          <li>Optimized headlines and call-to-actions</li>
+          <li>High relevance, low distraction forma</li>
+         Best for: Lead generation, direct response campaigns, sales-focused traffic
+
         </ul>
+        
       </div>
     </section>
 
@@ -368,14 +344,15 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
         Pop-Under Advertising
       </h2>
       <p className="text-gray-600 mb-6">
-        High-converting pop-under ads delivered responsibly to maximize results
-        without harming user experience.
+        When done correctly, pop-ups are one of the highest-converting ad formats available. Pop-Unders are still highly effective, even with all the PopUp blockers out on the market. 
+
       </p>
       <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-        <li>Exit-intent, timed, and scroll-based triggers</li>
-        <li>Optimized for both desktop and mobile devices</li>
-        <li>Frequency controls to avoid overexposure</li>
-        <li>Privacy-safe and GDPR-compliant delivery</li>
+        <li>Exit-intent, time-based, and scroll-triggered pop-ups</li>
+        <li>Fully responsive for desktop and mobile
+</li>
+        <li>Frequency capping to protect user experience</li>
+        <li>PGDPR and privacy-compliant delivery</li>
       </ul>
     </section>
 
@@ -383,34 +360,59 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
     <section className="bg-gray-50 py-20">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Performance-Driven Strategy
+          Performance-Focused Strategy
         </h2>
         <p className="text-gray-600 mb-6">
-          We continuously monitor and optimize campaigns to improve performance
-          and maximize return on investment.
+         We don’t guess — we optimize. Every campaign is tracked, analyzed, and refined to improve ROI.
         </p>
         <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-          <li>Advanced targeting by location, interests, and behavior</li>
-          <li>Retargeting audiences for higher conversions</li>
-          <li>Scalable PPC and CPM campaigns</li>
+          <h1>Smart Targeting</h1>
+          Reach the right audience using:
+          <li>Retargeting audiences</li>
+          
+          <li>Geographic targeting</li>
+          <li>Interest and behavioral data
+</li>
         </ul>
       </div>
     </section>
+
+
+
+ <section className="max-w-4xl mx-auto px-4 py-20 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Scalable Campaigns PPC and CPM campaigns
+      </h2>
+      <p className="text-gray-600 mb-6">
+        Our systems scale with your business
+      </p>
+      
+    </section>
+
+
+
+
 
     {/* Compliance & Brand Safety */}
     <section className="max-w-4xl mx-auto px-4 py-20 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-6">
         Compliance & Brand Safety
+
       </h2>
       <p className="text-gray-600 mb-6">
-        Your brand is protected with strict compliance and quality control
-        measures.
+       We take compliance and brand protection seriously:
+
       </p>
       <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-        <li>GDPR-compliant advertising practices</li>
-        <li>Fraud and bot traffic prevention</li>
-        <li>Brand-safe placements with content controls</li>
-      </ul>
+        <li>GDPR-compliant ad delivery</li>
+        <li>Anti-fraud and bot filtering
+</li>
+        <li>Brand-safe placements</li>
+        <li>Frequency and content controls</li>
+      </ul><br />
+      <h3>Whether you want more traffic, more leads, or more sales, we build advertising campaigns that deliver results.
+Contact us today to start your next high-performance advertising campaign
+</h3>
     </section>
 
     {/* Call to Action */}
@@ -419,7 +421,7 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
         Let’s Grow Your Business With Advertising That Works
       </h2>
       <button
-        onClick={() => onNavigate && onNavigate('contact')}
+        onClick={() => onNavigate && onNavigate('home')}
         className="bg-[#2fa4e7] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#258bd3] transition"
       >
         Contact Us Today
