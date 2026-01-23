@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import { SignupBanner, WhoAreWe, Partners, MapSection } from './components/HomeSections';
+
+// import Services from './components/Services';
+// import { SignupBanner, WhoAreWe } from './components/HomeSections';
 import { PublishersPage, AdvertisersPage, CompanyPage, LoginPage, RegistrationPage } from './components/ContentSections';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import { WhoAreWe } from './components/HomeSections';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -31,11 +33,11 @@ function App() {
         return (
           <>
             <Hero />
-            <Services />
-            <SignupBanner onNavigate={setCurrentPage} />
+            {/* <Services /> */}
+            {/* <SignupBanner onNavigate={setCurrentPage} /> */}
             <WhoAreWe />
-            <Partners />
-            <MapSection />
+            {/* <Partners />
+            <MapSection /> */}
             <ContactForm />
           </>
         );

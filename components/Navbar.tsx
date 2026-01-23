@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
+import logo from './assets/logo-white.png';
 interface NavbarProps {
   onNavigate: (page: string) => void;
   currentPage: string;
@@ -92,17 +92,21 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 relative">
           
-          {/* Logo */}
-          <div 
-            onClick={() => handleNavItemClick('home')}
-            className="flex-shrink-0 flex flex-col items-start cursor-pointer group select-none py-2"
-          >
-            <div className="flex items-baseline">
-                <span className="font-black text-4xl text-white tracking-tighter leading-none">TEAM HSV 
-</span>
-            </div>
-            <span className="text-white text-[10px] font-bold uppercase tracking-[0.2em] -mt-1 group-hover:opacity-80 transition-opacity">media</span>
-          </div>
+  {/* Logo */}
+<div
+  onClick={() => handleNavItemClick("home")}
+  className="flex-shrink-0 flex flex-col items-start cursor-pointer group select-none py-2"
+>
+  <img
+    src={logo}
+    alt="Company Logo"
+    className="h-10 w-auto"
+  />
+
+  <span className="text-white text-[10px] font-bold uppercase tracking-[0.2em] -mt-1 group-hover:opacity-80 transition-opacity">
+    media
+  </span>
+</div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center h-full">
@@ -122,9 +126,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                 <div className="absolute top-[60px] left-1/2 transform -translate-x-1/2 w-48 bg-white shadow-xl rounded-sm py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
                   <div className="relative z-10 flex flex-col text-center">
-                    <button onClick={() => handleNavItemClick('home', 'services')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Our network</button>
+                  
                     <button onClick={() => handleNavItemClick('home', 'about')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Who are we ?</button>
-                    <button onClick={() => handleNavItemClick('home', 'trust')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">They trust us</button>
+                   
                     <button onClick={() => handleNavItemClick('home', 'contact')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium mx-2">Contact us</button>
                   </div>
                 </div>
@@ -151,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                   (currentPage === 'advertisers' && !activeDropdown) || activeDropdown === 'advertisers' ? 'border-white text-white' : 'border-transparent text-white/90 hover:text-white'
                 }`}
               >
-                AGENCIES / ADVERTISERS
+                ADVERTISERS
               </button>
                {/* Advertisers Dropdown */}
                {activeDropdown === 'advertisers' && (
@@ -159,8 +163,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
                   <div className="relative z-10 flex flex-col text-center">
                     <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Our solutions</button>
-                    <button onClick={() => handleNavItemClick('advertisers', 'themes')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Our theme packs</button>
-                    <button onClick={() => handleNavItemClick('advertisers', 'formats')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium mx-2">Our formats</button>
+                  
+                  
                   </div>
                 </div>
               )}
@@ -229,7 +233,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             </div>
             
             {/* Language Flag */}
-             <div className="relative h-full flex items-center px-2">
+             {/* <div className="relative h-full flex items-center px-2">
                 <button 
                     onClick={toggleLang}
                     className="flex items-center gap-1 text-white hover:opacity-80"
@@ -260,7 +264,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                       </div>
                     </div>
                  )}
-            </div>
+            </div> */}
 
           </div>
 
@@ -285,17 +289,17 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           <div className="flex flex-col p-4 space-y-1">
             <button onClick={() => handleNavItemClick('home')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">HOME</button>
             <div className="pl-6 space-y-1 pb-2">
-                <button onClick={() => handleNavItemClick('home', 'services')} className="block text-xs text-white/80 py-1 text-left w-full">Our network</button>
+               
                 <button onClick={() => handleNavItemClick('home', 'about')} className="block text-xs text-white/80 py-1 text-left w-full">Who are we?</button>
                 <button onClick={() => handleNavItemClick('home', 'contact')} className="block text-xs text-white/80 py-1 text-left w-full">Contact us</button>
             </div>
 
             <button onClick={() => handleNavItemClick('publishers')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">PUBLISHERS</button>
             
-            <button onClick={() => handleNavItemClick('advertisers')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">AGENCIES / ADVERTISERS</button>
+            <button onClick={() => handleNavItemClick('advertisers')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">ADVERTISERS</button>
              <div className="pl-6 space-y-1 pb-2">
                 <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="block text-xs text-white/80 py-1 text-left w-full">Our solutions</button>
-                <button onClick={() => handleNavItemClick('advertisers', 'formats')} className="block text-xs text-white/80 py-1 text-left w-full">Our formats</button>
+                
             </div>
 
             <button onClick={() => handleNavItemClick('company')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">THE COMPANY</button>

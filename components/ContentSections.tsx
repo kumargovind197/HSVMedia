@@ -178,519 +178,334 @@ const AdFormatSwitcher = () => {
 
 export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => (
   <div className="bg-white">
-    {/* Hero Section */}
-    <div className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white relative overflow-hidden">
-      {/* Architectural Background Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(255,255,255,0.1)_20px,rgba(255,255,255,0.1)_40px)]"></div>
-      </div>
-      
-      <div className="max-w-4xl mx-auto px-4 relative z-10">
-        <RevealOnScroll>
-          <h2 className="text-5xl md:text-[56px] font-normal mb-8 uppercase tracking-wide">PUBLISHERS</h2>
-          <div className="w-24 h-px bg-white/60 mx-auto mb-10"></div>
-          <p className="text-lg md:text-[19px] leading-relaxed font-light text-white/95">
-            It's time to Access Quality Advertisers and Generate Revenue for your website.  Join our team and Start monetizing your traffic today. The goal of HSV media  is to offer quality advertising formats, a
-            high income, a simple implementation and an easy management.
-          </p>
-        </RevealOnScroll>
-      </div>
-    </div>
 
-    {/* Features Grid */}
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-        {/* Feature 1 */}
-        <RevealOnScroll delay={100} className="flex flex-col items-center group h-full">
-          <div className="w-36 h-36 rounded-full border-[6px] border-[#2fa4e7] flex items-center justify-center text-[#2fa4e7] mb-8 bg-white transition-all duration-500 group-hover:scale-110 shadow-lg shadow-blue-100 group-hover:shadow-blue-200 group-hover:rotate-3">
-            <Share2 size={70} strokeWidth={1.2} />
-          </div>
-          <h3 className="text-[26px] font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7] transition-colors">Recognized advertisers:</h3>
-          <p className="text-[#666] leading-7 font-light text-[15px]">
-            HSV Media team chooses its partners for their notoriety. Our network only works with national
-            and international renowned advertisers that give prestige to your site.
-            Their common point: the quality of their content and the confidence they inspire in users.
-          </p>
-        </RevealOnScroll>
+    {/* Hero */}
+    <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
+      <div className="max-w-4xl mx-auto px-4">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          Join our team
+        </h1>
+        <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+         Publishers gain access to vetted advertisers across multiple industries, reducing low-quality or spam ads.
+          Join Team HSV Media and start generating income today.
+        </p>
 
-        {/* Feature 2 */}
-        <RevealOnScroll delay={300} className="flex flex-col items-center group h-full">
-          <div className="w-36 h-36 rounded-full border-[6px] border-[#2fa4e7] flex items-center justify-center text-[#2fa4e7] mb-8 bg-white transition-all duration-500 group-hover:scale-110 shadow-lg shadow-blue-100 group-hover:shadow-blue-200 group-hover:rotate-3">
-            <Globe size={70} strokeWidth={1.2} />
-          </div>
-          <h3 className="text-[26px] font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7] transition-colors">Automatic campaign management</h3>
-          <p className="text-[#666] leading-7 font-light text-[15px]">
-            Once integrated ads on your pages, HSV Media team supports campaign management.
-            You will not waste time to choose yourself listings that best match your target is done for you!
-            So save yourself time to manage the content of your site.
-          </p>
-        </RevealOnScroll>
-
-        {/* Feature 3 */}
-        <RevealOnScroll delay={500} className="flex flex-col items-center group h-full">
-          <div className="w-36 h-36 rounded-full border-[6px] border-[#2fa4e7] flex items-center justify-center text-[#2fa4e7] mb-8 bg-white transition-all duration-500 group-hover:scale-110 shadow-lg shadow-blue-100 group-hover:shadow-blue-200 group-hover:rotate-3">
-            <Target size={70} strokeWidth={1.2} />
-          </div>
-          <h3 className="text-[26px] font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7] transition-colors">Monitoring interface easy to work with</h3>
-          <p className="text-[#666] leading-7 font-light text-[15px]">
-            No need to be a developer to run advertisements: simple and intuitive interface
-            HSV Media team allows you to quickly integrate the ads with a unique code.
-            In order to provide even more responsiveness and transparency, the company has developed
-            a real time statistical service.
-          </p>
-        </RevealOnScroll>
-      </div>
-      
-      <RevealOnScroll delay={600} className="text-center mt-16 mb-8">
         <button 
-            onClick={() => onNavigate && onNavigate('register')}
-            className="bg-[#2fa4e7] text-white font-bold text-lg py-4 px-16 rounded uppercase hover:bg-[#258bd3] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+          onClick={() => onNavigate && onNavigate('register')}
+          className="mt-10 bg-white text-[#2fa4e7] font-semibold px-8 py-3 rounded-full hover:bg-white/90 transition"
         >
-          Signup
+          Become a Publisher
         </button>
-      </RevealOnScroll>
-    </div>
-
-    {/* Banner */}
-    <div className="bg-[#2fa4e7] py-24 relative overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-          <div className="transform scale-[3] rotate-12 text-white animate-pulse"><Share2 size={300} /></div>
       </div>
-      <div className="relative z-10 text-center text-white px-4">
-        <RevealOnScroll>
-            <h2 className="text-4xl md:text-5xl font-normal uppercase tracking-wide">HSV Media team, CLOSER TO YOUR NEEDS</h2>
-        </RevealOnScroll>
-      </div>
-    </div>
+    </section>
 
-    {/* Payouts */}
-    <div className="bg-[#f9f9f9] py-24">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <RevealOnScroll>
-            <div className="flex justify-center mb-10 relative">
-            <Coins size={90} className="text-[#2fa4e7] transform hover:scale-110 transition-transform duration-300" strokeWidth={1} />
-            <ArrowUp size={40} className="text-[#2fa4e7] absolute top-[-10px] ml-20 animate-bounce" />
-            </div>
-            <h3 className="text-3xl font-normal text-slate-700 mb-6">Attractive and guaranteed payouts</h3>
-            <p className="text-[#666] leading-relaxed text-lg font-light">
-            Save time and money. The rates charged by the Network are clear, fixed and transparent. Ad6media offers customers a fixed fee and guaranteed CPM (cost
-            per 1,000 views). Whatever the time of year, you are immune to downward fluctuations of your CPM.
-            </p>
-        </RevealOnScroll>
-      </div>
-    </div>
+    {/* Benefits */}
+    <section className="max-w-6xl mx-auto px-4 py-20">
+      <div className="grid md:grid-cols-3 gap-12 text-center">
 
-    {/* Availability */}
-    <div className="bg-[#eff1f2] py-24 border-t border-slate-200">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <RevealOnScroll>
-            <div className="flex justify-center mb-10 group">
-            <Headset size={90} className="text-[#2fa4e7] group-hover:rotate-12 transition-transform duration-500" strokeWidth={1} />
-            </div>
-            <h3 className="text-3xl font-normal text-slate-700 mb-6">Available and near to you</h3>
-            <p className="text-[#666] leading-relaxed text-lg font-light">
-            One of the founding principles of HSV Media team is to offer more availability to its customers. The Network also responds quickly as possible to any request.
-            </p>
-        </RevealOnScroll>
-      </div>
-    </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3">Brand-safe campaigns</h3>
+          <p className="text-gray-600">
+            Access vetted national and international advertisers with brand-safe campaigns.
+          </p>
+        </div>
 
-    {/* Formats Switcher Section */}
-    <div id="formats" className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <RevealOnScroll>
-            <h2 className="text-[40px] font-normal text-[#337ab7] mb-8">Our formats</h2>
-            <p className="text-[#666] mb-16 text-lg font-light max-w-2xl mx-auto">
-            Depending on your offer and your message, choose one of our impact formats.
-            </p>
-            <div className="w-32 h-px bg-slate-200 mx-auto mb-20"></div>
-        </RevealOnScroll>
-        <div className="text-left">
-           <AdFormatSwitcher />
+        <div>
+          <h3 className="text-xl font-semibold mb-3">Advertiser and category filtering</h3>
+          <p className="text-gray-600">
+            Integrate ads with a simple code snippet and start monetizing in minutes.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold mb-3">Ongoing quality checks</h3>
+          <p className="text-gray-600">
+            Track impressions, clicks, and revenue with a transparent reporting dashboard.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    {/* How It Works */}
+    <section className="bg-gray-50 py-20">
+      <div className="max-w-5xl mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-12">How It Works</h2>
+
+        <div className="grid md:grid-cols-3 gap-12">
+          <div>
+            <span className="text-[#2fa4e7] text-4xl font-bold">1</span>
+            <h4 className="font-semibold mt-3">Register</h4>
+            <p className="text-gray-600">Create your publisher account.</p>
+          </div>
+
+          <div>
+            <span className="text-[#2fa4e7] text-4xl font-bold">2</span>
+            <h4 className="font-semibold mt-3">Integrate</h4>
+            <p className="text-gray-600">Add our ad code to your website.</p>
+          </div>
+
+          <div>
+            <span className="text-[#2fa4e7] text-4xl font-bold">3</span>
+            <h4 className="font-semibold mt-3">Earn</h4>
+            <p className="text-gray-600">Start generating revenue from your traffic.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    {/* CTA */}
+    <section className="py-20 text-center">
+      
+      <h2 className="text-3xl font-bold mb-6">
+              You decide which ads appear on your site
+
+        </h2><h3>Join our team and Start monetizing your traffic today</h3>
+      <button 
+        onClick={() => onNavigate && onNavigate('register')}
+        className="bg-[#2fa4e7] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#258bd3] transition"
+      >
+        Register as Publisher
+      </button>
+    </section>
+
   </div>
 );
 
 export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
-  <div className="bg-white">
+  <div className="bg-white text-gray-700">
+
     {/* Hero Section */}
-    <div className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white relative overflow-hidden">
-       <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(255,255,255,0.1)_20px,rgba(255,255,255,0.1)_40px)]"></div>
-      </div>
-       <div className="max-w-5xl mx-auto px-4 relative z-10">
-        <RevealOnScroll>
-            <h2 className="text-5xl md:text-[56px] font-normal mb-8 uppercase tracking-wide">AGENCIES / ADVERTISERS</h2>
-            <div className="w-24 h-px bg-white/60 mx-auto mb-10"></div>
-            <h3 className="text-2xl font-bold mb-6">Why to choose between Branding and Performance?</h3>
-            <p className="text-lg md:text-[19px] leading-relaxed font-light text-white/95">
-            HSV Media team driver and optimizes your ROI with different economics models in a premium environment. The ads offered by
-            HSV Media are contextualized to be consistent with the interests of your target.
-            </p>
-        </RevealOnScroll>
-      </div>
-    </div>
-    
-    {/* Technical Solutions */}
-    <div id="solutions" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-      <RevealOnScroll className="mb-16">
-        <h2 className="text-[40px] font-normal text-[#337ab7] mb-4">Our technical solutions</h2>
-        <p className="text-[#666] text-lg font-light mb-8">An exclusive technology for your campaigns.</p>
-        <div className="w-32 h-px bg-slate-200 mx-auto"></div>
-      </RevealOnScroll>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {/* Data Profiling */}
-        <RevealOnScroll delay={100} className="flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300">
-           <div className="mb-8 text-[#2fa4e7] group-hover:scale-110 transition-transform">
-             <ScanFace size={90} strokeWidth={1} />
-           </div>
-           <h3 className="text-2xl font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7]">Data profiling</h3>
-           <p className="text-[#666] leading-relaxed font-light text-[15px]">
-             Our careful analysis of the data ensures effective targeting in order to maintain a high conversion rate.
-           </p>
-        </RevealOnScroll>
-        {/* Live Optimization */}
-        <RevealOnScroll delay={300} className="flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300">
-           <div className="mb-8 text-[#2fa4e7] group-hover:scale-110 transition-transform">
-             <LineChart size={90} strokeWidth={1} />
-           </div>
-           <h3 className="text-2xl font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7]">Live Optimization</h3>
-           <p className="text-[#666] leading-relaxed font-light text-[15px]">
-             Our own ad server gives us a thorough monitoring and control of the results.
-           </p>
-        </RevealOnScroll>
-        {/* Tag Management */}
-        <RevealOnScroll delay={500} className="flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300">
-           <div className="mb-8 text-[#2fa4e7] group-hover:scale-110 transition-transform">
-             <ShieldCheck size={90} strokeWidth={1} />
-           </div>
-           <h3 className="text-2xl font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7]">Tag management & brand safety</h3>
-           <p className="text-[#666] leading-relaxed font-light text-[15px]">
-             Our premium network ensures a transparent and secure broadcasting. An easy tags management for our partners.
-           </p>
-        </RevealOnScroll>
-      </div>
-
-      <RevealOnScroll delay={600} className="mt-20">
-        <button 
-            onClick={() => onNavigate && onNavigate('register')}
-            className="bg-[#2fa4e7] border-2 border-[#2fa4e7] text-white font-bold text-2xl py-3 px-16 rounded uppercase hover:bg-white hover:text-[#2fa4e7] transition-all duration-300 shadow-lg hover:shadow-xl"
+    <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
+      <div className="max-w-3xl mx-auto px-4">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Smart Advertising Solutions That Drive Results
+        </h1>
+        <p className="text-lg md:text-xl text-white/90 mb-8">
+          We help brands and agencies grow with data-driven advertising campaigns
+          focused on traffic, leads, and conversions.
+        </p>
+        <button
+          onClick={() => onNavigate && onNavigate('contact')}
+          className="mt-6 bg-white text-[#2fa4e7] font-semibold px-8 py-3 rounded-full hover:bg-white/90 transition"
         >
-          SIGNUP
+          Launch Your Campaign
         </button>
-      </RevealOnScroll>
-    </div>
+      </div>
+    </section>
 
-    {/* Theme Packs */}
-    <div id="themes" className="bg-[#eff1f2] py-24 border-t border-slate-200">
-       <div className="max-w-7xl mx-auto px-4">
-         <RevealOnScroll className="text-center mb-16">
-            <h2 className="text-[40px] font-normal text-[#337ab7] mb-4">Our theme packs</h2>
-            <p className="text-[#666] text-lg font-light mb-12">Discover our main verticals.</p>
-            <div className="w-32 h-px bg-slate-300 mx-auto"></div>
-         </RevealOnScroll>
+    {/* Banner Advertising */}
+    <section className="max-w-6xl mx-auto px-4 py-20">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+        Banner Advertising
+      </h2>
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+        High-impact banner ads designed to increase brand visibility and attract
+        quality clicks across premium websites.
+      </p>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-16 max-w-5xl mx-auto">
-            {/* News */}
-            <RevealOnScroll delay={100} className="flex gap-6 items-start p-6 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 cursor-default group">
-               <div className="text-[#2fa4e7] flex-shrink-0 group-hover:scale-110 transition-transform"><Newspaper size={70} strokeWidth={1} /></div>
-               <div>
-                  <h3 className="text-2xl font-normal text-slate-700 mb-2">The <span className="text-[#2fa4e7]">news</span> pack</h3>
-                  <p className="text-[#666] font-light leading-relaxed">The widest offer: media brands, sites and information portals, BtoB sites ...</p>
-               </div>
-            </RevealOnScroll>
-            {/* High Tech */}
-            <RevealOnScroll delay={200} className="flex gap-6 items-start p-6 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 cursor-default group">
-               <div className="text-[#2fa4e7] flex-shrink-0 group-hover:scale-110 transition-transform"><Bot size={70} strokeWidth={1} /></div>
-               <div>
-                  <h3 className="text-2xl font-normal text-slate-700 mb-2">The pack High - Tech</h3>
-                  <p className="text-[#666] font-light leading-relaxed">All High-Tech interests: from the taking of Information to the practice of gaming</p>
-               </div>
-            </RevealOnScroll>
-            {/* Woman */}
-            <RevealOnScroll delay={300} className="flex gap-6 items-start p-6 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 cursor-default group">
-               <div className="text-[#2fa4e7] flex-shrink-0 group-hover:scale-110 transition-transform"><User size={70} strokeWidth={1} /></div>
-               <div>
-                  <h3 className="text-2xl font-normal text-slate-700 mb-2">The woman pack</h3>
-                  <p className="text-[#666] font-light leading-relaxed">fashion / lifestyle / health Multiple points of contacts for girls: news, radio, boards, forums ...</p>
-               </div>
-            </RevealOnScroll>
-            {/* Sport */}
-            <RevealOnScroll delay={400} className="flex gap-6 items-start p-6 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 cursor-default group">
-               <div className="text-[#2fa4e7] flex-shrink-0 group-hover:scale-110 transition-transform"><Trophy size={70} strokeWidth={1} /></div>
-               <div>
-                  <h3 className="text-2xl font-normal text-slate-700 mb-2">The <span className="text-[#2fa4e7]">sport</span> pack</h3>
-                  <p className="text-[#666] font-light leading-relaxed">Comprehensive coverage of all sports with a powerful offer on Football</p>
-               </div>
-            </RevealOnScroll>
-             {/* Young */}
-            <RevealOnScroll delay={500} className="flex gap-6 items-start p-6 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 cursor-default group">
-               <div className="text-[#2fa4e7] flex-shrink-0 group-hover:scale-110 transition-transform"><Music size={70} strokeWidth={1} /></div>
-               <div>
-                  <h3 className="text-2xl font-normal text-slate-700 mb-2">The young pack</h3>
-                  <p className="text-[#666] font-light leading-relaxed">Coverage of Interests: outings, school, employment</p>
-               </div>
-            </RevealOnScroll>
-             {/* Community */}
-            <RevealOnScroll delay={600} className="flex gap-6 items-start p-6 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 cursor-default group">
-               <div className="text-[#2fa4e7] flex-shrink-0 group-hover:scale-110 transition-transform"><MessageCircle size={70} strokeWidth={1} /></div>
-               <div>
-                  <h3 className="text-2xl font-normal text-slate-700 mb-2">The community pack</h3>
-                  <p className="text-[#666] font-light leading-relaxed">A powerful offering in terms of thematic coverage and UGC (user generated content)</p>
-               </div>
-            </RevealOnScroll>
-         </div>
-       </div>
-    </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 className="font-semibold text-lg mb-4">Key Features</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm">
+            <li>Static, animated, and rich media banners</li>
+            <li>Multiple standard sizes for broad placement</li>
+            <li>Ads shown on relevant, high-traffic websites</li>
+            <li>Audience and retargeting-based delivery</li>
+          </ul>
+        </div>
 
-    {/* Formats Switcher Section */}
-    <div id="formats" className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <RevealOnScroll>
-            <h2 className="text-[40px] font-normal text-[#337ab7] mb-8">Our formats</h2>
-            <p className="text-[#666] mb-16 text-lg font-light max-w-2xl mx-auto">
-            Depending on your offer and your message, choose one of our impact formats.
-            </p>
-            <div className="w-32 h-px bg-slate-200 mx-auto mb-20"></div>
-        </RevealOnScroll>
-        <div className="text-left">
-           <AdFormatSwitcher />
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 className="font-semibold text-lg mb-4">Best Use Cases</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm">
+            <li>Brand awareness campaigns</li>
+            <li>New product or service launches</li>
+            <li>Retargeting existing visitors</li>
+          </ul>
+        </div>
+
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 className="font-semibold text-lg mb-4">Supported Banner Sizes</h3>
+          <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
+            <li>Leaderboard (728 × 90)</li>
+            <li>Full Banner (468 × 60)</li>
+            <li>Button (125 × 125)</li>
+            <li>Skyscraper (120 × 600)</li>
+            <li>Wide Skyscraper (160 × 600)</li>
+            <li>Vertical Banner (120 × 240)</li>
+            <li>Medium Rectangle (300 × 250)</li>
+            <li>Square Box (250 × 250)</li>
+            <li>Large Rectangle (336 × 280)</li>
+            <li>Small Rectangle (180 × 150)</li>
+            <li>Wide Vertical Banner (160 × 400)</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
+
+    {/* Text Advertising */}
+    <section className="bg-gray-50 py-20">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Text Advertising
+        </h2>
+        <p className="text-gray-600 mb-6">
+          Text ads help you reach users when they are actively searching or
+          engaging with relevant content.
+        </p>
+        <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
+          <li>Keyword and context-based targeting</li>
+          <li>Clear headlines with strong call-to-actions</li>
+          <li>Simple, distraction-free ad format</li>
+          <li>Ideal for leads, sales, and direct response campaigns</li>
+        </ul>
+      </div>
+    </section>
+
+    {/* Pop-under Advertising */}
+    <section className="max-w-4xl mx-auto px-4 py-20 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Pop-Under Advertising
+      </h2>
+      <p className="text-gray-600 mb-6">
+        High-converting pop-under ads delivered responsibly to maximize results
+        without harming user experience.
+      </p>
+      <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
+        <li>Exit-intent, timed, and scroll-based triggers</li>
+        <li>Optimized for both desktop and mobile devices</li>
+        <li>Frequency controls to avoid overexposure</li>
+        <li>Privacy-safe and GDPR-compliant delivery</li>
+      </ul>
+    </section>
+
+    {/* Performance & Strategy */}
+    <section className="bg-gray-50 py-20">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Performance-Driven Strategy
+        </h2>
+        <p className="text-gray-600 mb-6">
+          We continuously monitor and optimize campaigns to improve performance
+          and maximize return on investment.
+        </p>
+        <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
+          <li>Advanced targeting by location, interests, and behavior</li>
+          <li>Retargeting audiences for higher conversions</li>
+          <li>Scalable PPC and CPM campaigns</li>
+        </ul>
+      </div>
+    </section>
+
+    {/* Compliance & Brand Safety */}
+    <section className="max-w-4xl mx-auto px-4 py-20 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Compliance & Brand Safety
+      </h2>
+      <p className="text-gray-600 mb-6">
+        Your brand is protected with strict compliance and quality control
+        measures.
+      </p>
+      <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
+        <li>GDPR-compliant advertising practices</li>
+        <li>Fraud and bot traffic prevention</li>
+        <li>Brand-safe placements with content controls</li>
+      </ul>
+    </section>
+
+    {/* Call to Action */}
+    <section className="py-20 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Let’s Grow Your Business With Advertising That Works
+      </h2>
+      <button
+        onClick={() => onNavigate && onNavigate('contact')}
+        className="bg-[#2fa4e7] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#258bd3] transition"
+      >
+        Contact Us Today
+      </button>
+    </section>
+
   </div>
 );
 
-export const CompanyPage = () => (
-  <div className="bg-white">
-    {/* Hero Section */}
-    <div className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white relative overflow-hidden">
-      {/* Background Pattern similar to home */}
-       <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(255,255,255,0.1)_20px,rgba(255,255,255,0.1)_40px)]"></div>
-      </div>
 
-      <div className="max-w-[1140px] mx-auto px-4 relative z-10">
-        <RevealOnScroll>
-            <h2 className="text-5xl md:text-[56px] font-normal mb-8 uppercase tracking-wide">THE COMPANY</h2>
-            <div className="w-24 h-px bg-white/60 mx-auto mb-10"></div>
-            <p className="text-lg md:text-[19px] leading-relaxed font-light text-white/95 max-w-5xl mx-auto">
-            HSV Media has been founded on a simple idea: advertising on the internet has been founded 10 years ago. The big question is, what do advertisers want today ? What do publishers want ? People want an advertising company with a human aspect and side ; there must be clear prices that are guaranteed and profitable. Our aim goal is to get things going straight forwards in the online advertising world. Advertisements must be different. Quality of advertisements is important.
+
+
+
+export const CompanyPage = () => {
+  return (
+    <div className="bg-white text-slate-700">
+
+      {/* HERO */}
+      <section className="bg-[#2fa4e7] py-24 text-center text-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-medium mb-6">
+            The Company
+          </h1>
+          <div className="w-20 h-px bg-white/70 mx-auto mb-8"></div>
+          <p className="text-lg leading-relaxed text-white/95">
+            HSV Media has been founded on a simple idea: advertising on the internet has existed Today, advertisers and publishers expect transparency, profitability, and a human approach.
+            HSV Media focuses on clear pricing, guaranteed performance, and quality advertising experiences.
+          </p>
+        </div>
+      </section>
+
+      {/* INTRO FEATURES */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+
+          <div>
+            <Building2 size={44} className="mx-auto text-[#2fa4e7] mb-4" />
+            <h3 className="text-xl font-medium mb-3">Being close to you</h3>
+            <p className="text-slate-600 text-sm leading-6">
+              Each partner is supported individually. HSV Media provides direct and personalized assistance.
             </p>
-        </RevealOnScroll>
-      </div>
-    </div>
+          </div>
+
+          <div>
+            <Settings size={44} className="mx-auto text-[#2fa4e7] mb-4" />
+            <h3 className="text-xl font-medium mb-3">Many innovations</h3>
+            <p className="text-slate-600 text-sm leading-6">
+              Advanced targeting tools help advertisers reach the right audience at the right time.
+            </p>
+          </div>
+
+          <div>
+            <Layout size={44} className="mx-auto text-[#2fa4e7] mb-4" />
+            <h3 className="text-xl font-medium mb-3">Segmented offers</h3>
+            <p className="text-slate-600 text-sm leading-6">
+              Clear, attractive, and guaranteed pricing models designed to save time and money.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+ 
     
-    {/* Intro Columns: Close to you, Innovations, Segmented */}
-    <div className="max-w-[1140px] mx-auto px-4 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            {/* Column 1 */}
-            <RevealOnScroll delay={100} className="flex flex-col items-center group">
-                <div className="mb-6 text-[#2fa4e7] group-hover:scale-110 transition-transform">
-                    <Building2 size={100} strokeWidth={1} />
-                </div>
-                <h3 className="text-[26px] font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7] transition-colors">Being close to you</h3>
-                <p className="text-[#666] leading-7 font-light text-[16px]">
-                    Each actor should be accompanied individually. HSV Media  strives to provide personalized support by phone with his partners.
-                </p>
-            </RevealOnScroll>
 
-             {/* Column 2 */}
-            <RevealOnScroll delay={300} className="flex flex-col items-center group">
-                <div className="mb-6 text-[#2fa4e7] group-hover:scale-110 transition-transform">
-                    <Settings size={100} strokeWidth={1} />
-                </div>
-                <h3 className="text-[26px] font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7] transition-colors">Many innovations</h3>
-                <p className="text-[#666] leading-7 font-light text-[16px]">
-                    The exclusive targeting tools developed by ad6media open you the way to win new customers and retain your regulars. Be certain to propose the right product at the right time.
-                </p>
-            </RevealOnScroll>
+      {/* CONTACT & JOBS */}
+      <section className="bg-[#eff1f2] py-20 text-center">
+        <button className="bg-[#2fa4e7] text-white px-10 py-3 text-lg font-medium rounded hover:opacity-90">
+          Contact Us
+        </button>
 
-             {/* Column 3 */}
-            <RevealOnScroll delay={500} className="flex flex-col items-center group">
-                <div className="mb-6 text-[#2fa4e7] group-hover:scale-110 transition-transform">
-                    <Layout size={100} strokeWidth={1} />
-                </div>
-                <h3 className="text-[26px] font-normal text-slate-700 mb-6 group-hover:text-[#2fa4e7] transition-colors">Segmented offers</h3>
-                <p className="text-[#666] leading-7 font-light text-[16px]">
-                   Save time and money. The rates charged by the authority are clear, attractive and guaranteed. The compensation offer to guarantee a fixed price.
-                </p>
-            </RevealOnScroll>
+        <div className="max-w-4xl mx-auto px-4 mt-16">
+          <h2 className="text-3xl font-medium text-[#337ab7] mb-4">
+            Jobs
+          </h2>
+          <p className="text-slate-600 leading-relaxed">
+            HSV Media regularly recruits motivated professionals across
+            Support, Publisher, and Advertiser divisions.
+          </p>
         </div>
-    </div>
+      </section>
 
-    {/* Why choose Ad6 Media */}
-    <div className="bg-[#eff1f2] py-24 border-t border-slate-200">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <RevealOnScroll>
-            <div className="flex justify-center mb-10 relative">
-            <TrendingUp size={90} className="text-[#2fa4e7]" strokeWidth={1} />
-            <div className="absolute top-0 ml-16 bg-[#2fa4e7] rounded-full p-2 animate-bounce">
-                <span className="text-white font-bold text-lg">$</span>
-            </div>
-            </div>
-            <h3 className="text-3xl font-normal text-slate-700 mb-6">Why choose HSV Media team ?</h3>
-            <p className="text-[#666] leading-relaxed text-lg font-light">
-            HSV Media is a web advertising company. The name comes from six types of targeting: retargeting, behavioural targeting, contextual, local, socio-demographic, geographic and timed well targeting. It is aimed for publishers who have more than 1,000 visitors per day ; our goal is to target large advertisers. Through its services, the company guarantees high CPM rates. The goal of the company is to offers different and quality ads.
-            </p>
-        </RevealOnScroll>
-      </div>
     </div>
+  );
+};
 
-     {/* A Quality Ideal */}
-    <div className="bg-white py-24">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <RevealOnScroll>
-            <div className="flex justify-center mb-10">
-            <Smile size={90} className="text-[#2fa4e7] hover:rotate-180 transition-transform duration-700 cursor-pointer" strokeWidth={1} />
-            </div>
-            <h3 className="text-3xl font-normal text-slate-700 mb-6">a quality Ideal</h3>
-            <p className="text-[#666] leading-relaxed text-lg font-light">
-            Our goal is to offer a display of quality that will integrate well with your website. To offer quality of ads, HSV selects advertisers that are known nationally, the quality of the advertisers will allow you to add credit to your website. In order to avoid overexposure for the web user, the company uses caps; this allows you to fully control the display on your website. Before thinking return on investment, HSV Media thinks first about the comfort of your visitors.
-            </p>
-        </RevealOnScroll>
-      </div>
-    </div>
-
-    {/* EXPERTS AT YOUR SERVICE */}
-    <div className="bg-white py-24 border-t border-slate-100">
-      <div className="max-w-[1140px] mx-auto px-4 text-center">
-         <RevealOnScroll>
-            <h2 className="text-[40px] font-normal text-[#337ab7] mb-6 uppercase">EXPERTS AT YOUR SERVICE</h2>
-            <p className="text-[#666] text-lg font-light mb-12">
-                HSV Media is structured into 3 divisions that work together to optimize advertising effectiveness.
-            </p>
-            <div className="w-32 h-px bg-slate-300 mx-auto mb-20"></div>
-         </RevealOnScroll>
-
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Pole Publishers */}
-            <RevealOnScroll delay={100} className="flex flex-col items-center hover:-translate-y-2 transition-transform">
-                 <div className="mb-6 text-[#2fa4e7]">
-                    <Store size={90} strokeWidth={1} />
-                </div>
-                <h3 className="text-[26px] font-normal text-slate-700 mb-6 uppercase">POLE PUBLISHERS</h3>
-                <p className="text-[#666] leading-7 font-light text-[15px] mb-4">
-                    Development of HSV publisher network in France as internationally, with a particularly active development on Germany, Spain, Italy and LATAM.
-                </p>
-                 <p className="text-[#666] leading-7 font-light text-[15px]">
-                    The desire of HSV Media is to build a powerful network across Europe by paying premium publishers CPM fixed throughout the year and across all formats.
-                </p>
-            </RevealOnScroll>
-             {/* Pole Marketing */}
-            <RevealOnScroll delay={300} className="flex flex-col items-center hover:-translate-y-2 transition-transform">
-                 <div className="mb-6 text-[#2fa4e7]">
-                    <Award size={90} strokeWidth={1} />
-                </div>
-                <h3 className="text-[26px] font-normal text-slate-700 mb-6 uppercase">POLE MARKETING</h3>
-                <p className="text-[#666] leading-7 font-light text-[15px] mb-4">
-                    Development of commercial offers, advertising revenues and audience monetization solutions.
-                </p>
-                 <p className="text-[#666] leading-7 font-light text-[15px]">
-                    An activity of Business Development to go further in meeting the needs of our partners and providing effective solutions.
-                </p>
-            </RevealOnScroll>
-             {/* Pole Agencies */}
-            <RevealOnScroll delay={500} className="flex flex-col items-center hover:-translate-y-2 transition-transform">
-                 <div className="mb-6 text-[#2fa4e7]">
-                    <Users size={90} strokeWidth={1} />
-                </div>
-                <h3 className="text-[26px] font-normal text-slate-700 mb-6 uppercase">POLE AGENCIES / PLATFORMS</h3>
-                <p className="text-[#666] leading-7 font-light text-[15px] mb-4">
-                    Development of the network of buyers basins of HSV hearings on France as internationally.
-                </p>
-                 <p className="text-[#666] leading-7 font-light text-[15px]">
-                    Positioned in the Niche "Branding / Perf" HSV provides media buyers branding formats marketed to performance: Skin, Footer, Interstitial...
-                </p>
-            </RevealOnScroll>
-         </div>
-      </div>
-    </div>
-    
-    {/* Jobs and Contact */}
-    <div className="bg-[#eff1f2] py-24 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-            <RevealOnScroll className="mb-12">
-                <button className="bg-[#2fa4e7] border-2 border-white text-white font-bold text-2xl py-3 px-12 rounded uppercase hover:bg-white hover:text-[#2fa4e7] transition-colors shadow-md transform hover:scale-105">
-                    CONTACT US
-                </button>
-            </RevealOnScroll>
-            
-            <RevealOnScroll delay={200}>
-                <h3 className="text-4xl font-normal text-[#337ab7] mb-6 uppercase">JOBS</h3>
-                <p className="text-[#666] leading-relaxed text-lg font-light mb-4">
-                    HSV Media regularly recruit motivated candidates to join our team and bring a new vision to the business. We give everyone a chance to evolve and bring his ideas.
-                </p>
-                <p className="text-[#666] text-lg font-light">
-                    Our various divisions:
-                </p>
-                <p className="text-lg font-normal text-slate-700 mt-2">
-                    Support - Publisher - Advertiser
-                </p>
-                
-                <div className="w-32 h-px bg-slate-300 mx-auto mt-16 mb-12"></div>
-                
-                <h2 className="text-[40px] font-normal text-[#337ab7] mb-8">Share our values:</h2>
-            </RevealOnScroll>
-        </div>
-    </div>
-
-    {/* Values Images */}
-    <div className="bg-white pb-24">
-        <div className="max-w-[1140px] mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                {/* Value 1 */}
-                <RevealOnScroll delay={100} className="text-center group cursor-pointer">
-                    <div className="h-56 mb-6 overflow-hidden relative rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" alt="Innovation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                    </div>
-                    <h3 className="text-2xl font-normal text-slate-700 mb-4 group-hover:text-[#2fa4e7] transition-colors">Innovation</h3>
-                     <p className="text-[#666] leading-relaxed text-[15px] font-light">
-                        HSV is a growing network that seeks to better differentiate itself from its competitors, particularly by developing innovative solutions, creative and pioneers in their field, as well as marketing new formats every year.
-                    </p>
-                </RevealOnScroll>
-                 {/* Value 2 */}
-                <RevealOnScroll delay={300} className="text-center group cursor-pointer">
-                     <div className="h-56 mb-6 overflow-hidden relative rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Expertise" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                    </div>
-                    <h3 className="text-2xl font-normal text-slate-700 mb-4 group-hover:text-[#2fa4e7] transition-colors">Expertise</h3>
-                     <p className="text-[#666] leading-relaxed text-[15px] font-light">
-                        HSV has its own ad server and its own technology. Thus allowing the network to control its campaigns more optimally and to better respond to customer expectations. The company also plays an expert role with advertisers by providing them with advice on the most appropriate formats.
-                    </p>
-                </RevealOnScroll>
-                 {/* Value 3 */}
-                <RevealOnScroll delay={500} className="text-center group cursor-pointer">
-                     <div className="h-56 mb-6 overflow-hidden relative rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop" alt="Adaptability" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                    </div>
-                    <h3 className="text-2xl font-normal text-slate-700 mb-4 group-hover:text-[#2fa4e7] transition-colors">Adaptability</h3>
-                     <p className="text-[#666] leading-relaxed text-[15px] font-light">
-                        The environment of the web is constantly changing, which is why it is important to know to adapt easily and be reactive, to anticipate changes.
-                    </p>
-                </RevealOnScroll>
-                 {/* Value 4 */}
-                <RevealOnScroll delay={700} className="text-center group cursor-pointer">
-                     <div className="h-56 mb-6 overflow-hidden relative rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop" alt="Demand and quality" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                    </div>
-                    <h3 className="text-2xl font-normal text-slate-700 mb-4 group-hover:text-[#2fa4e7] transition-colors">Demand and quality</h3>
-                     <p className="text-[#666] leading-relaxed text-[15px] font-light">
-                        HSV aims to go further and higher. This is a growing network based on the requirement and the rigor of its employees. It is important that each colaborator gives a qualitative and premium image of the network and and work for a better evolution.
-                    </p>
-                </RevealOnScroll>
-            </div>
-        </div>
-    </div>
-  </div>
-);
 
 export const RegistrationPage: React.FC<PageProps> = ({ onNavigate }) => {
   const [formData, setFormData] = useState({
