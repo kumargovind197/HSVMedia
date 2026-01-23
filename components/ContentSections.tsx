@@ -234,7 +234,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => (
       <h2 className="text-3xl font-bold mb-6">
               You decide which ads appear on your site
 
-        </h2><h3>Join our team and Start monetizing your traffic today</h3>
+        </h2><h3>It's time to Access Quality Advertisers and Generate Revenue for your website.  Join our team and Start monetizing your traffic today.</h3>
       <button 
         onClick={() => onNavigate && onNavigate('register')}
         className="bg-[#2fa4e7] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#258bd3] transition"
