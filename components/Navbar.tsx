@@ -170,68 +170,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               )}
             </div>
 
-            {/* THE COMPANY */}
-            <div className="relative h-full flex items-center px-4">
-              <button
-                onClick={() => toggleDropdown('company')}
-                className={`text-[13px] font-bold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
-                  (currentPage === 'company' && !activeDropdown) || activeDropdown === 'company' ? 'border-white text-white' : 'border-transparent text-white/90 hover:text-white'
-                }`}
-              >
-                THE COMPANY
-              </button>
-               {/* Company Dropdown */}
-               {activeDropdown === 'company' && (
-                <div className="absolute top-[60px] left-1/2 transform -translate-x-1/2 w-48 bg-white shadow-xl rounded-sm py-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
-                  <div className="relative z-10 flex flex-col text-center">
-                    <button onClick={() => handleNavItemClick('company', 'about')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Who are we ?</button>
-                    <button onClick={() => handleNavItemClick('company', 'jobs')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium mx-2">Jobs</button>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* LOG IN */}
-            <div className="relative h-full flex items-center px-4 border-l border-white/20 ml-4">
-              <button
-                onClick={toggleLogin}
-                className={`text-[13px] font-bold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
-                  isLoginOpen ? 'border-white text-white' : 'border-transparent text-white/90 hover:text-white'
-                }`}
-              >
-                LOG IN
-              </button>
-              
-              {/* Login Dropdown Form (Matches Screenshot) */}
-              {isLoginOpen && (
-                <div className="absolute top-[60px] right-0 w-72 bg-white shadow-xl rounded-sm p-4 animate-in fade-in slide-in-from-top-2 duration-200 cursor-default">
-                  <div className="absolute -top-2 right-6 w-4 h-4 bg-white transform rotate-45"></div>
-                  <div className="relative z-10 flex flex-col space-y-3">
-                    <input 
-                        type="text" 
-                        placeholder="Username" 
-                        className="w-full px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 focus:outline-none focus:border-[#2fa4e7]"
-                    />
-                    <input 
-                        type="password" 
-                        placeholder="Password" 
-                        className="w-full px-3 py-2 border border-gray-300 rounded text-sm text-gray-700 focus:outline-none focus:border-[#2fa4e7]"
-                    />
-                    <button 
-                        className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded text-sm hover:bg-[#258bd3] uppercase tracking-wide transition-colors"
-                        onClick={() => handleNavItemClick('login')}
-                    >
-                        CONNECTION
-                    </button>
-                    <div className="text-center pt-1">
-                        <a href="#" className="text-xs text-gray-500 hover:text-[#2fa4e7]">Forgot your password ?</a>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            
             {/* Language Flag */}
              {/* <div className="relative h-full flex items-center px-2">
                 <button 

@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 
 // import Services from './components/Services';
 // import { SignupBanner, WhoAreWe } from './components/HomeSections';
-import { PublishersPage, AdvertisersPage, CompanyPage, LoginPage, RegistrationPage } from './components/ContentSections';
+import { PublishersPage, AdvertisersPage,  LoginPage, RegistrationPage } from './components/ContentSections';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 // import { WhoAreWe } from './components/HomeSections';
@@ -24,7 +24,7 @@ function App() {
       case 'advertisers':
         return <AdvertisersPage onNavigate={setCurrentPage} />;
       case 'company':
-        return <CompanyPage />;
+        // return <CompanyPage />;
       case 'login':
         return <LoginPage onNavigate={setCurrentPage} />;
       case 'register':

@@ -190,12 +190,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => (
           Join Team HSV Media and start generating income today.
         </p>
 
-        <button 
-          onClick={() => onNavigate && onNavigate('register')}
-          className="mt-10 bg-white text-[#2fa4e7] font-semibold px-8 py-3 rounded-full hover:bg-white/90 transition"
-        >
-          Become a Publisher
-        </button>
+        
       </div>
     </section>
 
@@ -236,7 +231,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => (
 
         </h2><h3>It's time to Access Quality Advertisers and Generate Revenue for your website.  Join our team and Start monetizing your traffic today.</h3>
       <button 
-        onClick={() => onNavigate && onNavigate('register')}
+        onClick={() => onNavigate && onNavigate('contact')}
         className="bg-[#2fa4e7] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#258bd3] transition"
       >
         Register as Publisher
@@ -253,18 +248,10 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
     <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
       <div className="max-w-3xl mx-auto px-4">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Smart Advertising Solutions That Drive Results
+          Our Advertising Solutions
         </h1>
-        <p className="text-lg md:text-xl text-white/90 mb-8">
-          We help brands and agencies grow with data-driven advertising campaigns
-          
-        </p>
-        <button
-          onClick={() => onNavigate && onNavigate('contact')}
-          className="mt-6 bg-white text-[#2fa4e7] font-semibold px-8 py-3 rounded-full hover:bg-white/90 transition"
-        >
-          Launch Your Campaign
-        </button>
+        
+       
       </div>
     </section>
 
@@ -279,7 +266,7 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
 
       <div className="grid md:grid-cols-3 gap-8">
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 className="font-semibold text-lg mb-4">Key Features</h3>
+          <h3 className="font-semibold text-lg mb-4">Features</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm">
             <li>Static, animated, and rich media banners
 </li>
@@ -290,17 +277,11 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
           <h2>Best for: Brand awareness, product launches, retargeting campaigns</h2>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 className="font-semibold text-lg mb-4">Best Use Cases</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm">
-            <li>Brand awareness campaigns</li>
-            <li>New product or service launches</li>
-            <li>Retargeting existing visitors</li>
-          </ul>
-        </div>
+      
 
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 className="font-semibold text-lg mb-4">Supported Banner Sizes</h3>
+          <h3 className="font-semibold text-lg mb-4">Below is a list of available types of Banner Formats we supply!
+</h3>
           <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
             <li>Leaderboard (728 × 90)</li>
             <li>Full Banner (468 × 60)</li>
@@ -344,7 +325,7 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
         Pop-Under Advertising
       </h2>
       <p className="text-gray-600 mb-6">
-        When done correctly, pop-ups are one of the highest-converting ad formats available. Pop-Unders are still highly effective, even with all the PopUp blockers out on the market. 
+       When done correctly, pop-ups are one of the highest-converting ad formats available. Pop-Unders are still highly effective, even with all the PopUp blockers out on the market. 
 
       </p>
       <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
@@ -411,14 +392,15 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
         <li>Frequency and content controls</li>
       </ul><br />
       <h3>Whether you want more traffic, more leads, or more sales, we build advertising campaigns that deliver results.
-Contact us today to start your next high-performance advertising campaign
+
 </h3>
     </section>
 
     {/* Call to Action */}
     <section className="py-20 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        Let’s Grow Your Business With Advertising That Works
+      Contact us today to start your next high-performance advertising campaign
+
       </h2>
       <button
         onClick={() => onNavigate && onNavigate('home')}
@@ -434,79 +416,6 @@ Contact us today to start your next high-performance advertising campaign
 
 
 
-
-export const CompanyPage = () => {
-  return (
-    <div className="bg-white text-slate-700">
-
-      {/* HERO */}
-      <section className="bg-[#2fa4e7] py-24 text-center text-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-medium mb-6">
-            The Company
-          </h1>
-          <div className="w-20 h-px bg-white/70 mx-auto mb-8"></div>
-          <p className="text-lg leading-relaxed text-white/95">
-            HSV Media has been founded on a simple idea: advertising on the internet has existed Today, advertisers and publishers expect transparency, profitability, and a human approach.
-            HSV Media focuses on clear pricing, guaranteed performance, and quality advertising experiences.
-          </p>
-        </div>
-      </section>
-
-      {/* INTRO FEATURES */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-
-          <div>
-            <Building2 size={44} className="mx-auto text-[#2fa4e7] mb-4" />
-            <h3 className="text-xl font-medium mb-3">Being close to you</h3>
-            <p className="text-slate-600 text-sm leading-6">
-              Each partner is supported individually. HSV Media provides direct and personalized assistance.
-            </p>
-          </div>
-
-          <div>
-            <Settings size={44} className="mx-auto text-[#2fa4e7] mb-4" />
-            <h3 className="text-xl font-medium mb-3">Many innovations</h3>
-            <p className="text-slate-600 text-sm leading-6">
-              Advanced targeting tools help advertisers reach the right audience at the right time.
-            </p>
-          </div>
-
-          <div>
-            <Layout size={44} className="mx-auto text-[#2fa4e7] mb-4" />
-            <h3 className="text-xl font-medium mb-3">Segmented offers</h3>
-            <p className="text-slate-600 text-sm leading-6">
-              Clear, attractive, and guaranteed pricing models designed to save time and money.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
- 
-    
-
-      {/* CONTACT & JOBS */}
-      <section className="bg-[#eff1f2] py-20 text-center">
-        <button className="bg-[#2fa4e7] text-white px-10 py-3 text-lg font-medium rounded hover:opacity-90">
-          Contact Us
-        </button>
-
-        <div className="max-w-4xl mx-auto px-4 mt-16">
-          <h2 className="text-3xl font-medium text-[#337ab7] mb-4">
-            Jobs
-          </h2>
-          <p className="text-slate-600 leading-relaxed">
-            HSV Media regularly recruits motivated professionals across
-            Support, Publisher, and Advertiser divisions.
-          </p>
-        </div>
-      </section>
-
-    </div>
-  );
-};
 
 
 export const RegistrationPage: React.FC<PageProps> = ({ onNavigate }) => {

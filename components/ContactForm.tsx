@@ -44,18 +44,17 @@ const ContactForm: React.FC = () => {
       <div className="text-[#666] space-y-6">
         <h3 className="text-3xl font-normal text-[#337ab7]">Contact us</h3>
         <p className="text-lg font-light leading-relaxed">
-          In the heart of UK, HSV Media is ready to assist you.
+           HSV Media is ready to assist you.
         </p>
         <p className="text-lg font-light leading-relaxed">
-          You can send us an email or use the form below. We reply within 24 working hours.
+          You can send us an email or use the form below.
         </p>
 
         <div className="flex items-start gap-4">
           <MapPin size={36} className="text-[#2fa4e7] mt-1" strokeWidth={1.5} />
           <div>
             <h4 className="font-semibold text-slate-800 text-lg">HSV Media</h4>
-            <p className="font-light text-lg">8 boulevard Dubreuil</p>
-            <p className="font-light text-lg">91400 Orsay</p>
+          
           </div>
         </div>
       </div>
@@ -87,16 +86,7 @@ const ContactForm: React.FC = () => {
             onChange={(e) => setFormData({...formData, object: e.target.value})}
             required
           />
-          <select
-            className="w-full px-4 py-3 border border-slate-300 rounded focus:border-[#2fa4e7] outline-none text-slate-700 font-light bg-white"
-            value={formData.service}
-            onChange={(e) => setFormData({...formData, service: e.target.value})}
-          >
-            <option>Select the service</option>
-            <option>Advertiser Support</option>
-            <option>Publisher Support</option>
-            <option>General Inquiry</option>
-          </select>
+         
           <textarea
             rows={5}
             placeholder="Message"

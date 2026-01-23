@@ -14,22 +14,18 @@ const Hero: React.FC = () => {
       <div className="text-center z-10 flex flex-col items-center justify-center max-w-4xl px-6 pb-24">
         
         {/* Main Headline */}
-        <h1 className="text-[42px] sm:text-[48px] md:text-[60px] font-extrabold text-white leading-tight tracking-tight">
-          Performance-Driven Digital Advertising
+        <h1 className="text-[42px] sm:text-[20px] md:text-[15px] font-extrabold text-white leading-tight tracking-tight">
+          {/* Team HSV Media is your advertising partner that helps you grow your business faster. Save time and Build brand recognition while driving clicks. We help you to engage your customer and reach your target audience by delivering performance based advertising solutions. */}
         </h1>
 
         {/* Subheading */}
         <p className="mt-6 text-base sm:text-lg md:text-xl text-white/80 max-w-2xl">
-          We help brands capture attention, drive qualified traffic, and convert clicks into customers through data-driven campaigns.
+          We help brands capture attention, drive qualified traffic, and convert clicks into customers through smart, data-driven targeted campaigns.
+
+Our mission is simple: deliver measurable results, whether its using high-impact banner ads, high-intent text ads, or strategically placed pop-up campaigns. You can trust us to deliver and exceed our clients expectations
         </p>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="mt-10 inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black hover:bg-white/90 transition"
-        >
-          Start Your Campaign
-        </a>
+      
       </div>
 
       {/* Scroll Indicator */}
