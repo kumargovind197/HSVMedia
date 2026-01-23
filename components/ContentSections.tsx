@@ -176,237 +176,319 @@ const AdFormatSwitcher = () => {
 
 /* --- PAGE COMPONENTS --- */
 
-export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => (
+
+export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
+  const [openModal, setOpenModal] = useState<"publisher" | "advertiser" | null>(null);
+
+  return (
+    <div className="bg-white">
+
+      {/* Hero */}
+      <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Join our team
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+          Publishers gain access to vetted advertisers across multiple industries, reducing low-quality or spam ads.
+          </p>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <div className="grid md:grid-cols-3 gap-12 text-center">
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Brand-Safe Campaigns</h3>
+            <p className="text-gray-600">
+              Work with trusted advertisers across multiple industries.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Full Ad Control</h3>
+            <p className="text-gray-600">
+              Filter advertisers and categories. You decide what appears on your site.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Ongoing Quality Checks</h3>
+            <p className="text-gray-600">
+              Continuous monitoring to ensure performance and compliance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-gray-50 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+         You decide which ads appear on your site.
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+          It’s time to access quality advertisers and generate sustainable revenue
+          for your website.
+        </p>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <button
+            onClick={() => setOpenModal("publisher")}
+            className="bg-[#2fa4e7] text-white px-10 py-3 rounded-md font-semibold hover:bg-[#258bd3] transition"
+          >
+            Register as Publisher
+          </button>
+
+          <button
+            onClick={() => setOpenModal("advertiser")}
+            className="bg-gray-900 text-white px-10 py-3 rounded-md font-semibold hover:bg-gray-800 transition"
+          >
+            Advertise With Us
+          </button>
+        </div>
+      </section>
+
+      {/* Popup Modal */}
+      {openModal && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
+          <div className="bg-white w-full max-w-lg rounded-lg p-8 relative">
+            
+            <button
+              onClick={() => setOpenModal(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-black"
+            >
+              ✕
+            </button>
+
+            {openModal === "publisher" && (
+              <>
+                <h3 className="text-2xl font-semibold mb-6">
+                  Register as a Publisher
+                </h3>
+
+                <div className="space-y-5">
+                  <input
+                    type="text"
+                    placeholder="Website URL"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+                  <input
+                    type="text"
+                    placeholder="Position"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+                  <textarea
+                    rows={4}
+                    placeholder="Message"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+                  <button className="w-full bg-[#2fa4e7] text-white py-3 rounded-md font-semibold hover:bg-[#258bd3] transition">
+                    Submit
+                  </button>
+                </div>
+              </>
+            )}
+
+            {openModal === "advertiser" && (
+              <>
+                <h3 className="text-2xl font-semibold mb-6">
+                  Want to Advertise With Us?
+                </h3>
+
+                <div className="space-y-5">
+                  <input
+                    type="text"
+                    placeholder="Company name"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+                  <textarea
+                    rows={4}
+                    placeholder="Message"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+                  <button className="w-full bg-gray-900 text-white py-3 rounded-md font-semibold hover:bg-gray-800 transition">
+                    Send Enquiry
+                  </button>
+                </div>
+              </>
+            )}
+
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
   <div className="bg-white">
 
     {/* Hero */}
     <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
       <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">
-          Join our team
-        </h1>
-        <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-         Publishers gain access to vetted advertisers across multiple industries, reducing low-quality or spam ads.
-          Join Team HSV Media and start generating income today.
-        </p>
-
-        
-      </div>
-    </section>
-
-    {/* Benefits */}
-    <section className="max-w-6xl mx-auto px-4 py-20">
-      <div className="grid md:grid-cols-3 gap-12 text-center">
-
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Brand-safe campaigns</h3>
-          <p className="text-gray-600">
-            Access vetted national and international advertisers with brand-safe campaigns.
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Advertiser and category filtering</h3>
-          <p className="text-gray-600">
-            Integrate ads with a simple code snippet and start monetizing in minutes.
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Ongoing quality checks</h3>
-          <p className="text-gray-600">
-            Track impressions, clicks, and revenue with a transparent reporting dashboard.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-  
-    {/* CTA */}
-    <section className="py-20 text-center">
-      
-      <h2 className="text-3xl font-bold mb-6">
-              You decide which ads appear on your site
-
-        </h2><h3>It's time to Access Quality Advertisers and Generate Revenue for your website.  Join our team and Start monetizing your traffic today.</h3>
-      <button 
-        onClick={() => onNavigate && onNavigate('contact')}
-        className="bg-[#2fa4e7] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#258bd3] transition"
-      >
-        Register as Publisher
-      </button>
-    </section>
-
-  </div>
-);
-
-export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
-  <div className="bg-white text-gray-700">
-
-    {/* Hero Section */}
-    <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
-      <div className="max-w-3xl mx-auto px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           Our Advertising Solutions
         </h1>
-        
-       
+
+        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+         
+          We connect your business with the right audience using data-led
+          strategies that drive traffic, engagement, and measurable results.
+        </p>
+
+        <button
+          onClick={() => onNavigate?.('contact')}
+          className="mt-10 bg-white text-[#2fa4e7] font-semibold px-10 py-3 rounded-full hover:bg-white/90 transition"
+        >
+          Launch Your Campaign
+        </button>
       </div>
     </section>
 
-    {/* Banner Advertising */}
-    <section className="max-w-6xl mx-auto px-4 py-20">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-        Banner Advertising
-      </h2>
-      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-       Our banner ad placements are designed to stop the scroll and build brand recognition while driving clicks.
-      </p>
+    {/* Intro */}
+   
+    {/* Solutions */}
+    <section className="bg-gray-50 py-20">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-16">
+          Our Advertising Solutions
+        </h2>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 className="font-semibold text-lg mb-4">Features</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm">
-            <li>Static, animated, and rich media banners
+        <div className="grid md:grid-cols-3 gap-12">
+
+          {/* Banner Ads */}
+          <div className="bg-white p-8 shadow-sm border rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">
+              Banner Advertising
+            </h3>
+            <p className="text-gray-600 mb-4">
+            
+Our banner ad placements are designed to stop the scroll and build brand recognition while driving clicks.
+
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Static, animated, and rich media formats</li>
+              <li>• Multiple sizes for maximum placement coverage</li>
+              <li>• Placement on relevant, high-traffic websites</li>
+              <li>• Retargeting and audience-based targeting
+
+                Leaderboard ( 728 x 90 )<br />
+Full Banner ( 468 x 60 ) <br />
+Button ( 125 x 125 ) <br />
+Skyscraper ( 120 x 600 )<br />
+Wide Skyscraper ( 160 x 600 )<br />
+Vertical Banner ( 120 x 240 ) <br />
+Medium Rectangle ( 300 x 250 )<br />
+Square Box ( 250 x 250 )<br />
+Large Rectangle ( 336 x 280 ) <br />
+Small Rectangle ( 180 x 150 )<br />
+Wide Vertical Banner ( 160 x 400 )<br />
+
 </li>
-            <li>Multiple sizes for maximum placement coverage</li>
-            <li>Placement on relevant, high-traffic websites</li>
-            <li>Retargeting and audience-based targeting</li>
-          </ul><br/>
-          <h2>Best for: Brand awareness, product launches, retargeting campaigns</h2>
+
+            </ul>
+
+          </div>
+
+          {/* Text Ads */}
+          <div className="bg-white p-8 shadow-sm border rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">
+              Text Advertising
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Intent-focused text ads that reach users when they are actively
+              searching or browsing relevant content.
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Keyword and contextual targeting</li>
+              <li>• Optimized messaging and CTAs</li>
+              <li>• High relevance with minimal distraction</li>
+            </ul>
+          </div>
+
+          {/* Pop-under */}
+          <div className="bg-white p-8 shadow-sm border rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">
+              Pop-Under Advertising
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Strategically deployed pop-under campaigns that deliver strong
+              conversion rates while maintaining a controlled user experience.
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Exit, time, and scroll-based triggers</li>
+              <li>• Desktop and mobile compatible</li>
+              <li>• Frequency and experience controls</li>
+            </ul>
+          </div>
+
         </div>
+      </div>
+    </section>
 
-      
+    {/* Strategy */}
+    <section className="max-w-6xl mx-auto px-4 py-20">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
 
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 className="font-semibold text-lg mb-4">Below is a list of available types of Banner Formats we supply!
-</h3>
-          <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
-            <li>Leaderboard (728 × 90)</li>
-            <li>Full Banner (468 × 60)</li>
-            <li>Button (125 × 125)</li>
-            <li>Skyscraper (120 × 600)</li>
-            <li>Wide Skyscraper (160 × 600)</li>
-            <li>Vertical Banner (120 × 240)</li>
-            <li>Medium Rectangle (300 × 250)</li>
-            <li>Square Box (250 × 250)</li>
-            <li>Large Rectangle (336 × 280)</li>
-            <li>Small Rectangle (180 × 150)</li>
-            <li>Wide Vertical Banner (160 × 400)</li>
+        <div>
+          <h2 className="text-3xl font-bold mb-6">
+            Performance & Optimization
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Every campaign is tracked, analyzed, and optimized continuously.
+            We focus on performance metrics that matter — traffic quality,
+            engagement, and conversions.
+          </p>
+          <ul className="text-gray-600 space-y-2 text-sm">
+            <li>• Geographic and audience targeting</li>
+            <li>• Behavioral and interest-based data</li>
+            <li>• Retargeting and scaling options</li>
           </ul>
         </div>
+
+        <div className="bg-gray-50 p-8 rounded-lg border">
+          <h3 className="text-xl font-semibold mb-4">
+            Compliance & Brand Safety
+          </h3>
+          <ul className="text-gray-600 space-y-2 text-sm">
+            <li>• GDPR-compliant ad delivery</li>
+            <li>• Fraud and bot protection</li>
+            <li>• Brand-safe placements</li>
+            <li>• Content and frequency controls</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
-    {/* Text Advertising */}
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Text Advertising
-        </h2>
-        <p className="text-gray-600 mb-6">
-          Text ads deliver results by reaching users at the moment of intent. These ads allow you to present your message quickly and effectively in search engines, and banner text ads. 
-        </p>
-        <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-          <li>Keyword-targeted and contextual placements</li>
-          <li>Optimized headlines and call-to-actions</li>
-          <li>High relevance, low distraction forma</li>
-         Best for: Lead generation, direct response campaigns, sales-focused traffic
-
-        </ul>
-        
-      </div>
-    </section>
-
-    {/* Pop-under Advertising */}
-    <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        Pop-Under Advertising
-      </h2>
-      <p className="text-gray-600 mb-6">
-       When done correctly, pop-ups are one of the highest-converting ad formats available. Pop-Unders are still highly effective, even with all the PopUp blockers out on the market. 
-
-      </p>
-      <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-        <li>Exit-intent, time-based, and scroll-triggered pop-ups</li>
-        <li>Fully responsive for desktop and mobile
-</li>
-        <li>Frequency capping to protect user experience</li>
-        <li>PGDPR and privacy-compliant delivery</li>
-      </ul>
-    </section>
-
-    {/* Performance & Strategy */}
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Performance-Focused Strategy
-        </h2>
-        <p className="text-gray-600 mb-6">
-         We don’t guess — we optimize. Every campaign is tracked, analyzed, and refined to improve ROI.
-        </p>
-        <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-          <h1>Smart Targeting</h1>
-          Reach the right audience using:
-          <li>Retargeting audiences</li>
-          
-          <li>Geographic targeting</li>
-          <li>Interest and behavioral data
-</li>
-        </ul>
-      </div>
-    </section>
-
-
-
- <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        Scalable Campaigns PPC and CPM campaigns
-      </h2>
-      <p className="text-gray-600 mb-6">
-        Our systems scale with your business
-      </p>
-      
-    </section>
-
-
-
-
-
-    {/* Compliance & Brand Safety */}
-    <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        Compliance & Brand Safety
-
-      </h2>
-      <p className="text-gray-600 mb-6">
-       We take compliance and brand protection seriously:
-
-      </p>
-      <ul className="list-disc list-inside text-gray-600 space-y-2 text-left max-w-2xl mx-auto">
-        <li>GDPR-compliant ad delivery</li>
-        <li>Anti-fraud and bot filtering
-</li>
-        <li>Brand-safe placements</li>
-        <li>Frequency and content controls</li>
-      </ul><br />
-      <h3>Whether you want more traffic, more leads, or more sales, we build advertising campaigns that deliver results.
-
-</h3>
-    </section>
-
-    {/* Call to Action */}
-    <section className="py-20 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-      Contact us today to start your next high-performance advertising campaign
-
+    {/* CTA */}
+    <section className="py-20 text-center bg-[#2fa4e7] text-white">
+      <h2 className="text-3xl font-bold mb-6">
+        Ready to Grow With HSV Media?
       </h2>
       <button
-        onClick={() => onNavigate && onNavigate('home')}
-        className="bg-[#2fa4e7] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#258bd3] transition"
+        onClick={() => onNavigate?.('contact')}
+        className="bg-white text-[#2fa4e7] px-12 py-3 rounded-full font-semibold hover:bg-white/90 transition"
       >
-        Contact Us Today
+        Contact Our Team
       </button>
     </section>
 
