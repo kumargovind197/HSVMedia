@@ -33,8 +33,8 @@ function App() {
         return (
           <>
             <Hero />
+            <AdvertisersPage /><br /> 
          <PublishersPage />
-         <AdvertisersPage/>
             <ContactForm />
           </>
         );

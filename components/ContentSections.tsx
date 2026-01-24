@@ -186,42 +186,78 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
       {/* Hero */}
       <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Join our team
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Join our team. 
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-          Publishers gain access to vetted advertisers across multiple industries, reducing low-quality or spam ads.
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+           Publishers gain access to vetted advertisers across multiple industries, reducing low-quality or spam ads.
           </p>
         </div>
       </section>
 
+      {/* Intro */}
+      <section className="max-w-6xl mx-auto px-4 py-20 text-center">
+        <h2 className="text-3xl font-bold mb-6">
+          Built for Serious Publishers
+        </h2>
+        <p className="text-gray-600 text-lg max-w-4xl mx-auto">
+          We work with publishers across multiple industries, offering access to
+          reliable advertisers while maintaining strict quality and brand safety
+          standards.
+        </p>
+      </section>
+
       {/* Benefits */}
-      <section className="max-w-6xl mx-auto px-4 py-20">
-        <div className="grid md:grid-cols-3 gap-12 text-center">
-          <div>
-            <h3 className="text-xl font-semibold mb-3">Brand-Safe Campaigns</h3>
-            <p className="text-gray-600">
-              Work with trusted advertisers across multiple industries.
-            </p>
-          </div>
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12 text-center">
 
-          <div>
-            <h3 className="text-xl font-semibold mb-3">Full Ad Control</h3>
-            <p className="text-gray-600">
-              Filter advertisers and categories. You decide what appears on your site.
-            </p>
-          </div>
+            <div className="bg-white p-8 border rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold mb-3">
+                Brand-Safe Advertising
+              </h3>
+              <p className="text-gray-600">
+                Display ads from vetted advertisers only, ensuring your website
+                remains clean, credible, and compliant.
+              </p>
+            </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-3">Ongoing Quality Checks</h3>
-            <p className="text-gray-600">
-              Continuous monitoring to ensure performance and compliance.
-            </p>
+            <div className="bg-white p-8 border rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold mb-3">
+                Full Control & Filtering
+              </h3>
+              <p className="text-gray-600">
+                Choose which advertisers and categories appear on your site.
+                You stay in control of your content and audience experience.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 border rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold mb-3">
+                Continuous Quality Monitoring
+              </h3>
+              <p className="text-gray-600">
+                Ongoing checks ensure ad quality, relevance, and performance
+                remain consistent over time.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Control Statement */}
+      <section className="max-w-5xl mx-auto px-4 py-20 text-center">
+        <h2 className="text-3xl font-bold mb-6">
+          You Control What Appears on Your Website
+        </h2>
+        <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          Our platform is designed to respect your audience. You decide how,
+          where, and which ads are shown — without compromising user experience.
+        </p>
+      </section>
+
+      {/* CTA with 2 buttons */}
       <section className="py-20 bg-gray-50 text-center">
         <h2 className="text-3xl font-bold mb-4">
          You decide which ads appear on your site.
@@ -329,14 +365,12 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
                 </div>
               </>
             )}
-
           </div>
         </div>
       )}
     </div>
   );
 };
-
 
 export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
   <div className="bg-white">
