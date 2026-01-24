@@ -176,6 +176,165 @@ const AdFormatSwitcher = () => {
 
 /* --- PAGE COMPONENTS --- */
 
+export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
+  <div className="bg-white">
+
+    {/* Hero */}
+    <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
+      <div className="max-w-4xl mx-auto px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Our Advertising Solutions
+        </h1>
+
+        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+         
+          We connect your business with the right audience using data-led
+          strategies that drive traffic, engagement, and measurable results.
+        </p>
+
+        <button
+          onClick={() => onNavigate?.('contact')}
+          className="mt-10 bg-white text-[#2fa4e7] font-semibold px-10 py-3 rounded-full hover:bg-white/90 transition"
+        >
+          Launch Your Campaign
+        </button>
+      </div>
+    </section>
+
+    {/* Intro */}
+   
+    {/* Solutions */}
+    <section className="bg-gray-50 py-20">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-16">
+          Our Advertising Solutions
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-12">
+
+          {/* Banner Ads */}
+          <div className="bg-white p-8 shadow-sm border rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">
+              Banner Advertising
+            </h3>
+            <p className="text-gray-600 mb-4">
+            
+Our banner ad placements are designed to stop the scroll and build brand recognition while driving clicks.
+
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Static, animated, and rich media formats</li>
+              <li>• Multiple sizes for maximum placement coverage</li>
+              <li>• Placement on relevant, high-traffic websites</li>
+              <li>• Retargeting and audience-based targeting
+
+                Leaderboard ( 728 x 90 )<br />
+Full Banner ( 468 x 60 ) <br />
+Button ( 125 x 125 ) <br />
+Skyscraper ( 120 x 600 )<br />
+Wide Skyscraper ( 160 x 600 )<br />
+Vertical Banner ( 120 x 240 ) <br />
+Medium Rectangle ( 300 x 250 )<br />
+Square Box ( 250 x 250 )<br />
+Large Rectangle ( 336 x 280 ) <br />
+Small Rectangle ( 180 x 150 )<br />
+Wide Vertical Banner ( 160 x 400 )<br />
+
+</li>
+
+            </ul>
+
+          </div>
+
+          {/* Text Ads */}
+          <div className="bg-white p-8 shadow-sm border rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">
+              Text Advertising
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Intent-focused text ads that reach users when they are actively
+              searching or browsing relevant content.
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Keyword and contextual targeting</li>
+              <li>• Optimized messaging and CTAs</li>
+              <li>• High relevance with minimal distraction</li>
+            </ul>
+          </div>
+
+          {/* Pop-under */}
+          <div className="bg-white p-8 shadow-sm border rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">
+              Pop-Under Advertising
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Strategically deployed pop-under campaigns that deliver strong
+              conversion rates while maintaining a controlled user experience.
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Exit, time, and scroll-based triggers</li>
+              <li>• Desktop and mobile compatible</li>
+              <li>• Frequency and experience controls</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* Strategy */}
+    <section className="max-w-6xl mx-auto px-4 py-20">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <h2 className="text-3xl font-bold mb-6">
+            Performance & Optimization
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Every campaign is tracked, analyzed, and optimized continuously.
+            We focus on performance metrics that matter — traffic quality,
+            engagement, and conversions.
+          </p>
+          <ul className="text-gray-600 space-y-2 text-sm">
+            <li>• Geographic and audience targeting</li>
+            <li>• Behavioral and interest-based data</li>
+            <li>• Retargeting and scaling options</li>
+          </ul>
+        </div>
+
+        <div className="bg-gray-50 p-8 rounded-lg border">
+          <h3 className="text-xl font-semibold mb-4">
+            Compliance & Brand Safety
+          </h3>
+          <ul className="text-gray-600 space-y-2 text-sm">
+            <li>• GDPR-compliant ad delivery</li>
+            <li>• Fraud and bot protection</li>
+            <li>• Brand-safe placements</li>
+            <li>• Content and frequency controls</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    {/* CTA */}
+    <section className="py-20 text-center bg-[#2fa4e7] text-white">
+      <h2 className="text-3xl font-bold mb-6">
+        Ready to Grow With HSV Media?
+      </h2>
+      <a href="#con">
+     
+       
+       <button  className="bg-white text-[#2fa4e7] px-12 py-3 rounded-full font-semibold hover:bg-white/90 transition"
+      >
+        Contact Our Team
+        </button>
+     </a>
+    </section>
+
+  </div>
+);
+
 
 export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
   const [openModal, setOpenModal] = useState<"publisher" | "advertiser" | null>(null);
@@ -187,7 +346,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
       <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Join our team. 
+         Team HSV Media
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
            Publishers gain access to vetted advertisers across multiple industries, reducing low-quality or spam ads.
@@ -372,162 +531,6 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
   );
 };
 
-export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
-  <div className="bg-white">
-
-    {/* Hero */}
-    <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
-      <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Our Advertising Solutions
-        </h1>
-
-        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-         
-          We connect your business with the right audience using data-led
-          strategies that drive traffic, engagement, and measurable results.
-        </p>
-
-        <button
-          onClick={() => onNavigate?.('contact')}
-          className="mt-10 bg-white text-[#2fa4e7] font-semibold px-10 py-3 rounded-full hover:bg-white/90 transition"
-        >
-          Launch Your Campaign
-        </button>
-      </div>
-    </section>
-
-    {/* Intro */}
-   
-    {/* Solutions */}
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-16">
-          Our Advertising Solutions
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-12">
-
-          {/* Banner Ads */}
-          <div className="bg-white p-8 shadow-sm border rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">
-              Banner Advertising
-            </h3>
-            <p className="text-gray-600 mb-4">
-            
-Our banner ad placements are designed to stop the scroll and build brand recognition while driving clicks.
-
-            </p>
-            <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Static, animated, and rich media formats</li>
-              <li>• Multiple sizes for maximum placement coverage</li>
-              <li>• Placement on relevant, high-traffic websites</li>
-              <li>• Retargeting and audience-based targeting
-
-                Leaderboard ( 728 x 90 )<br />
-Full Banner ( 468 x 60 ) <br />
-Button ( 125 x 125 ) <br />
-Skyscraper ( 120 x 600 )<br />
-Wide Skyscraper ( 160 x 600 )<br />
-Vertical Banner ( 120 x 240 ) <br />
-Medium Rectangle ( 300 x 250 )<br />
-Square Box ( 250 x 250 )<br />
-Large Rectangle ( 336 x 280 ) <br />
-Small Rectangle ( 180 x 150 )<br />
-Wide Vertical Banner ( 160 x 400 )<br />
-
-</li>
-
-            </ul>
-
-          </div>
-
-          {/* Text Ads */}
-          <div className="bg-white p-8 shadow-sm border rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">
-              Text Advertising
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Intent-focused text ads that reach users when they are actively
-              searching or browsing relevant content.
-            </p>
-            <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Keyword and contextual targeting</li>
-              <li>• Optimized messaging and CTAs</li>
-              <li>• High relevance with minimal distraction</li>
-            </ul>
-          </div>
-
-          {/* Pop-under */}
-          <div className="bg-white p-8 shadow-sm border rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">
-              Pop-Under Advertising
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Strategically deployed pop-under campaigns that deliver strong
-              conversion rates while maintaining a controlled user experience.
-            </p>
-            <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Exit, time, and scroll-based triggers</li>
-              <li>• Desktop and mobile compatible</li>
-              <li>• Frequency and experience controls</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    {/* Strategy */}
-    <section className="max-w-6xl mx-auto px-4 py-20">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-
-        <div>
-          <h2 className="text-3xl font-bold mb-6">
-            Performance & Optimization
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Every campaign is tracked, analyzed, and optimized continuously.
-            We focus on performance metrics that matter — traffic quality,
-            engagement, and conversions.
-          </p>
-          <ul className="text-gray-600 space-y-2 text-sm">
-            <li>• Geographic and audience targeting</li>
-            <li>• Behavioral and interest-based data</li>
-            <li>• Retargeting and scaling options</li>
-          </ul>
-        </div>
-
-        <div className="bg-gray-50 p-8 rounded-lg border">
-          <h3 className="text-xl font-semibold mb-4">
-            Compliance & Brand Safety
-          </h3>
-          <ul className="text-gray-600 space-y-2 text-sm">
-            <li>• GDPR-compliant ad delivery</li>
-            <li>• Fraud and bot protection</li>
-            <li>• Brand-safe placements</li>
-            <li>• Content and frequency controls</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    {/* CTA */}
-    <section className="py-20 text-center bg-[#2fa4e7] text-white">
-      <h2 className="text-3xl font-bold mb-6">
-        Ready to Grow With HSV Media?
-      </h2>
-      <button
-        onClick={() => onNavigate?.('contact')}
-        className="bg-white text-[#2fa4e7] px-12 py-3 rounded-full font-semibold hover:bg-white/90 transition"
-      >
-        Contact Our Team
-      </button>
-    </section>
-
-  </div>
-);
 
 
 

@@ -10,11 +10,11 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="ad6-hero h-screen min-h-[600px] w-full flex flex-col justify-center items-center relative">
+    <section className=" bg-[#2fa4e7] ad6-hero h-screen min-h-[600px] w-full flex flex-col justify-center items-center relative">
       <div className="text-center z-10 flex flex-col items-center justify-center max-w-4xl px-6 pb-24">
 
         {/* Main Headline */}
-        <h1 className="text-[42px] sm:text-[48px] md:text-[60px] font-extrabold text-white leading-tight tracking-tight">
+        <h1 className="  text-[42px] sm:text-[48px] md:text-[60px] font-extrabold text-white leading-tight tracking-tight">
           Your Performance-Driven Advertising Partner
         </h1>
 
