@@ -47,6 +47,10 @@ const Hero: React.FC = () => {
           <div className="w-6 h-6 border-b-[5px] border-r-[5px] border-white rotate-45 -translate-y-3 rounded-sm"></div>
         </a>
       </div>
+
+
+
+
     </section>
   );
 };

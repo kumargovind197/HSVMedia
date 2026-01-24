@@ -33,11 +33,8 @@ function App() {
         return (
           <>
             <Hero />
-            {/* <Services /> */}
-            {/* <SignupBanner onNavigate={setCurrentPage} /> */}
-            {/* <WhoAreWe /> */}
-            {/* <Partners />
-            <MapSection /> */}
+         <PublishersPage />
+         <AdvertisersPage/>
             <ContactForm />
           </>
         );
