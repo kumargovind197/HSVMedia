@@ -460,8 +460,26 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
                 <h3 className="text-2xl font-semibold mb-6">
                   Register as a Publisher
                 </h3>
-
                 <div className="space-y-5">
+
+                  
+ <input
+                    type="text"
+                    placeholder=" Name"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+                   <input
+                    type="number"
+                    placeholder="Contact Number"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+                  
+                   <input
+                    type="number"
+                    placeholder="No of monthly impressions"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+                  <br />
                   <input
                     type="text"
                     placeholder="Website URL"
@@ -502,10 +520,25 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
                 <div className="space-y-5">
                   <input
                     type="text"
+                    placeholder="Name"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
+<input
+                    type="text"
                     placeholder="Company name"
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
+                  <input
+                    type="text"
+                    placeholder="Position"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
 
+                  <input
+                    type="number"
+                    placeholder="Contact number"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
                   <input
                     type="email"
                     placeholder="Email address"

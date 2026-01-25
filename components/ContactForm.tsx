@@ -47,7 +47,7 @@ const ContactForm: React.FC = () => {
            HSV Media is ready to assist you.
         </p>
         <p className="text-lg font-light leading-relaxed">
-          You can send us an email or use the form below.
+          Team HSV Media where applicable
         </p>
 
         <div className="flex items-start gap-4">
@@ -64,7 +64,7 @@ const ContactForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <input 
             type="text" 
-            placeholder="Surname"
+            placeholder="Name"
             className="w-full px-4 py-3 border border-slate-300 rounded focus:border-[#2fa4e7] outline-none text-slate-700 font-light"
             value={formData.surname}
             onChange={(e) => setFormData({...formData, surname: e.target.value})}
