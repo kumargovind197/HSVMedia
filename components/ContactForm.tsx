@@ -44,7 +44,7 @@ const ContactForm: React.FC = () => {
       <div className="text-[#666] space-y-6">
         <h3 className="text-3xl font-normal text-[#337ab7]">Contact us</h3>
         <p className="text-lg font-light leading-relaxed">
-           HSV Media is ready to assist you.
+          If you want to know more, Team HSV Media is at your disposal
         </p>
         <p className="text-lg font-light leading-relaxed">
           Team HSV Media where applicable

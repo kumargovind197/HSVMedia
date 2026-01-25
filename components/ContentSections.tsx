@@ -322,14 +322,14 @@ Wide Vertical Banner ( 160 x 400 )<br />
       <h2 className="text-3xl font-bold mb-6">
         Ready to Grow With HSV Media?
       </h2>
-      <a href="#con">
+      
      
        
-       <button  className="bg-white text-[#2fa4e7] px-12 py-3 rounded-full font-semibold hover:bg-white/90 transition"
+       <button  onClick={() => onNavigate?.('home')} className="bg-white text-[#2fa4e7] px-12 py-3 rounded-full font-semibold hover:bg-white/90 transition"
       >
         Contact Our Team
         </button>
-     </a>
+    
     </section>
 
   </div>
@@ -473,18 +473,18 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
                     placeholder="Contact Number"
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
-                  
+                   <input
+                    type="text"
+                    placeholder="Website URL"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
+                  />
                    <input
                     type="number"
                     placeholder="No of monthly impressions"
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
                   <br />
-                  <input
-                    type="text"
-                    placeholder="Website URL"
-                    className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
-                  />
+                 
 
                   <input
                     type="email"
