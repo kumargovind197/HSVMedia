@@ -78,7 +78,7 @@ const ContactForm: React.FC = () => {
               <MapPin size={36} className="text-[#2fa4e7]" />
               <div>
                 <h4 className="font-semibold text-slate-800 text-lg">
-                  HSV Media
+                  Team HSV Media
                 </h4>
               </div>
             </div>
