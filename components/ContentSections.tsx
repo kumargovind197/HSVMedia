@@ -320,7 +320,7 @@ Wide Vertical Banner ( 160 x 400 )<br />
     {/* CTA */}
     <section className="py-20 text-center bg-[#2fa4e7] text-white">
       <h2 className="text-3xl font-bold mb-6">
-        Ready to Grow With HSV Media?
+        Ready to Grow With Team HSV Media?
       </h2>
       
      
