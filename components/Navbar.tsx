@@ -159,7 +159,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                 <div className="absolute top-[60px] left-1/2 transform -translate-x-1/2 w-48 bg-white shadow-xl rounded-sm py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
                   <div className="relative z-10 flex flex-col text-center">
-                    <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Who we are?</button>
+                    <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">our advertising solutions</button>
                   
                   
                   </div>
@@ -231,7 +231,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             
             <button onClick={() => handleNavItemClick('advertisers')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">ADVERTISERS</button>
              <div className="pl-6 space-y-1 pb-2">
-                <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="block text-xs text-white/80 py-1 text-left w-full">Who we are?</button>
+                <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="block text-xs text-white/80 py-1 text-left w-full">our advertising solutions</button>
                 
             </div>
 
