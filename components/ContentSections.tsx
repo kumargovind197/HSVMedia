@@ -206,9 +206,9 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
     {/* Solutions */}
     <section className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-16">
+        {/* <h2 className="text-3xl font-bold text-center mb-16">
           Our Advertising Solutions
-        </h2>
+        </h2> */}
 
         <div className="grid md:grid-cols-3 gap-12">
 

@@ -204,7 +204,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center">
+          {/* <div className="lg:hidden flex items-center">
              <div className="mr-4 flex items-center">
                  <button onClick={() => handleNavItemClick('login')} className="text-xs font-bold text-white border border-white/50 px-2 py-1 rounded mr-2">LOGIN</button>
              </div>
@@ -214,7 +214,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
