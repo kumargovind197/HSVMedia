@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logo from './assets/logo-white.png';
+import logo from './assets/hsvlogo.png';
 interface NavbarProps {
   onNavigate: (page: string) => void;
   currentPage: string;
