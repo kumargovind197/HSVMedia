@@ -100,12 +100,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   <img
     src={logo}
     alt="Company Logo"
-    className="h-10 w-auto"
+    className="h-12 w-auto"
   />
 
-  <span className="text-white text-[10px] font-bold uppercase tracking-[0.2em] -mt-1 group-hover:opacity-80 transition-opacity">
-    media
-  </span>
 </div>
 
           {/* Desktop Menu */}
