@@ -124,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
                   <div className="relative z-10 flex flex-col text-center">
                   
-                    <button onClick={() => handleNavItemClick('home', 'about')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Who are we ?</button>
+                    {/* <button onClick={() => handleNavItemClick('home', 'about')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium border-b border-slate-100 mx-2">Who are we ?</button> */}
                    
                     <button onClick={() => handleNavItemClick('home', 'contact')} className="px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7] font-medium mx-2">Contact us</button>
                   </div>
@@ -223,7 +223,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             <button onClick={() => handleNavItemClick('home')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">HOME</button>
             <div className="pl-6 space-y-1 pb-2">
                
-                <button onClick={() => handleNavItemClick('home', 'about')} className="block text-xs text-white/80 py-1 text-left w-full">Who are we?</button>
+                {/* <button onClick={() => handleNavItemClick('home', 'about')} className="block text-xs text-white/80 py-1 text-left w-full">Who are we?</button> */}
                 <button onClick={() => handleNavItemClick('home', 'contact')} className="block text-xs text-white/80 py-1 text-left w-full">Contact us</button>
             </div>
 
