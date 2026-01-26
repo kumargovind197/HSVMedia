@@ -231,7 +231,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             
             <button onClick={() => handleNavItemClick('advertisers')} className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10">ADVERTISERS</button>
              <div className="pl-6 space-y-1 pb-2">
-                <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="block text-xs text-white/80 py-1 text-left w-full">Our solutions</button>
+                <button onClick={() => handleNavItemClick('advertisers', 'solutions')} className="block text-xs text-white/80 py-1 text-left w-full">Who we are?</button>
                 
             </div>
 
