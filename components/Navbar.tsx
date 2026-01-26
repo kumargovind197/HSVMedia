@@ -85,19 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               
             </div>
 
-            {/* PUBLISHERS */}
-            <div className="relative h-full flex items-center px-4">
-              <button
-                onClick={() => handleNavItemClick('publishers')}
-                className={`text-[13px] font-bold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
-                  currentPage === 'publishers'
-                    ? 'border-white text-white'
-                    : 'border-transparent text-white/90 hover:text-white'
-                }`}
-              >
-                PUBLISHERS
-              </button>
-            </div>
+          
 
         
 
@@ -126,6 +114,21 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                 </div>
               )}
             </div>
+
+              {/* PUBLISHERS */}
+            <div className="relative h-full flex items-center px-4">
+              <button
+                onClick={() => handleNavItemClick('publishers')}
+                className={`text-[13px] font-bold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
+                  currentPage === 'publishers'
+                    ? 'border-white text-white'
+                    : 'border-transparent text-white/90 hover:text-white'
+                }`}
+              >
+                PUBLISHERS
+              </button>
+            </div>
+            
 
                 <div className="relative h-full flex items-center px-4">
               <button
@@ -165,15 +168,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               HOME
             </button>
          
-            {/* PUBLISHERS */}
-
-            <button
-              onClick={() => handleNavItemClick('publishers')}
-              className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10"
-            >
-              PUBLISHERS
-            </button>
-
+          
             {/* ADVERTISERS */}
             <button
               onClick={() => handleNavItemClick('advertisers')}
@@ -190,6 +185,13 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               </button>
             </div>
           </div>
+  <button
+              onClick={() => handleNavItemClick('publishers')}
+              className="text-left w-full text-sm font-bold text-white hover:bg-white/10 px-4 py-3 rounded uppercase border-b border-white/10"
+            >
+              PUBLISHERS
+            </button>  
+
 
            <button
               onClick={() => handleNavItemClick('home', 'contact')}
@@ -197,6 +199,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             >
               Contact Us
             </button>
+
+            
         </div>
       )}
     </nav>
