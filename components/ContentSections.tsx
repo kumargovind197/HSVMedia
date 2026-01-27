@@ -139,32 +139,32 @@ const AdFormatSwitcher = () => {
   return (
     <RevealOnScroll className="max-w-6xl mx-auto bg-slate-50 rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col lg:flex-row">
       {/* Controls */}
-      <div className="w-full lg:w-1/3 bg-white p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col">
-        <h3 className="text-xl font-bold text-slate-800 mb-6 px-2">Select a Format</h3>
+      <div className="w-full lg:w-1/3 bg-white p-4 sm:p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col">
+        <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-4 sm:mb-6 px-2">Select a Format</h3>
         <div className="flex flex-col gap-2 flex-1">
           {formats.map(f => (
             <button
               key={f.id}
               onClick={() => setActiveTab(f.id as any)}
-              className={`text-left px-6 py-4 rounded-xl transition-all duration-300 flex items-center justify-between group ${
+              className={`text-left px-4 sm:px-6 py-3 sm:py-4 rounded-xl transition-all duration-300 flex items-center justify-between group text-sm sm:text-base ${
                 activeTab === f.id
                   ? 'bg-[#2fa4e7] text-white shadow-md shadow-blue-200 scale-[1.02]'
-                  : 'hover:bg-slate-50 text-slate-600 hover:text-[#2fa4e7] hover:pl-8'
+                  : 'hover:bg-slate-50 text-slate-600 hover:text-[#2fa4e7] hover:pl-6 sm:hover:pl-8'
               }`}
             >
-              <span className="font-bold text-lg">{f.label}</span>
-              {activeTab === f.id && <CheckCircle size={18} className="text-white animate-in zoom-in" />}
+              <span className="font-bold">{f.label}</span>
+              {activeTab === f.id && <CheckCircle size={18} className="text-white animate-in zoom-in flex-shrink-0" />}
             </button>
           ))}
         </div>
-        <div className="mt-8 p-6 bg-slate-50 rounded-xl border border-slate-100 transition-all duration-300 hover:shadow-md">
-           <h4 className="text-[#2fa4e7] font-bold text-sm uppercase mb-2">Description</h4>
-           <p className="text-slate-600 font-light leading-relaxed text-sm">{activeFormat.desc}</p>
+        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-slate-50 rounded-xl border border-slate-100 transition-all duration-300 hover:shadow-md">
+           <h4 className="text-[#2fa4e7] font-bold text-xs sm:text-sm uppercase mb-2">Description</h4>
+           <p className="text-slate-600 font-light leading-relaxed text-xs sm:text-sm">{activeFormat.desc}</p>
         </div>
       </div>
 
       {/* Preview */}
-      <div className="w-full lg:w-2/3 p-8 lg:p-16 bg-slate-100/50 flex items-center justify-center relative overflow-hidden group">
+      <div className="w-full lg:w-2/3 p-4 sm:p-8 lg:p-16 bg-slate-100/50 flex items-center justify-center relative overflow-hidden group">
          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#2fa4e7 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
          <div className="w-full max-w-2xl transform transition-all duration-500 group-hover:scale-[1.02]">
             <LaptopPreview type={activeTab as any} />
@@ -180,13 +180,13 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
   <div className="bg-white">
 
     {/* Hero */}
-    <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
-      <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+    <section className="bg-[#2fa4e7] pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 text-center text-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
           Our Advertising Solutions
         </h1>
 
-        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto">
          
           We connect your business with the right audience using data-led
           strategies that drive traffic, engagement, and measurable results.
@@ -194,7 +194,7 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
 
         <button
           onClick={() => onNavigate?.('contact')}
-          className="mt-10 bg-white text-[#2fa4e7] font-semibold px-10 py-3 rounded-full hover:bg-white/90 transition"
+          className="mt-6 sm:mt-8 md:mt-10 bg-white text-[#2fa4e7] font-semibold px-6 sm:px-10 py-2.5 sm:py-3 rounded-full hover:bg-white/90 transition text-sm sm:text-base"
         >
           Launch Your Campaign
         </button>
@@ -204,13 +204,13 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
     {/* Intro */}
    
     {/* Solutions */}
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-gray-50 py-12 sm:py-16 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* <h2 className="text-3xl font-bold text-center mb-16">
           Our Advertising Solutions
         </h2> */}
 
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
 
           {/* Banner Ads */}
           <div className="bg-white p-8 shadow-sm border rounded-lg">

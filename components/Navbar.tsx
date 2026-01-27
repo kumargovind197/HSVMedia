@@ -11,6 +11,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [showPublisherModal, setShowPublisherModal] = useState(false);
+  const [showAdvertiserModal, setShowAdvertiserModal] = useState(false);
 
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -101,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                   </button>
 
                    <button
-                    onClick={() => handleNavItemClick('publishers', 'register')}
+                    onClick={() => setShowAdvertiserModal(true)}
                     className="block w-full px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7]"
                   >
                     Adertise with us
@@ -126,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               {activeDropdown === 'publishers' && (
                 <div className="absolute top-[55px] left-1/2 -translate-x-1/2 w-56 bg-white shadow-xl py-2">
                   <button
-                    onClick={() => handleNavItemClick('publishers', 'register')}
+                    onClick={() => setShowPublisherModal(true)}
                     className="block w-full px-4 py-2 text-sm text-slate-600 hover:text-[#2fa4e7]"
                   >
                     Register as a Publisher
@@ -179,7 +181,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           Our advertising solutions
         </button>
          <button
-          onClick={() => handleNavItemClick('publishers', 'register')}
+          onClick={() => setShowAdvertiserModal(true)}
           className="block w-full text-left text-xs text-white/80 py-2 hover:text-white"
         >
          Adertise with us
@@ -196,7 +198,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
 
       <div className="pl-6 pb-2">
         <button
-          onClick={() => handleNavItemClick('publishers', 'register')}
+          onClick={() => setShowPublisherModal(true)}
           className="block w-full text-left text-xs text-white/80 py-2 hover:text-white"
         >
           Register as a Publisher
@@ -211,6 +213,282 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
         Contact Us
       </button>
 
+    </div>
+  </div>
+)}
+
+{/* Advertiser Registration Modal */}
+{showAdvertiserModal && (
+  <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
+    <div className="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      {/* Header */}
+      <div className="bg-[#2fa4e7] px-6 py-4 flex justify-between items-center">
+        <h2 className="text-xl font-bold text-white">Advertise with Us</h2>
+        <button
+          onClick={() => setShowAdvertiserModal(false)}
+          className="text-white text-2xl hover:opacity-70"
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Form Content */}
+      <form className="p-6 space-y-4">
+        <div>
+         
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+<div>
+         
+          <input
+            type="text"
+            placeholder="Company Name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+<div>
+         
+          <input
+            type="text"
+            placeholder="Position"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+
+       
+
+     <div>
+         
+          <input
+            type="number"
+            placeholder="Contact Number"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+
+ <div>
+         
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+        <div>
+          
+          <textarea
+                    rows={4}
+                    placeholder="Message"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+        </div>
+
+    
+      
+
+        <div className="pt-4">
+          <button
+            type="submit"
+            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors"
+          >
+            Send Enquiry 
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
+
+{/* Publisher Registration Modal */}
+{showPublisherModal && (
+  <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
+    <div className="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      {/* Header */}
+      <div className="bg-[#2fa4e7] px-6 py-4 flex justify-between items-center">
+        <h2 className="text-xl font-bold text-white">Register as Publisher</h2>
+        <button
+          onClick={() => setShowPublisherModal(false)}
+          className="text-white text-2xl hover:opacity-70"
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Form Content */}
+      <form className="p-6 space-y-4">
+        <div>
+         
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+  <div>
+         
+          <input
+            type="number"
+            placeholder="Contact Number"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+        <div>
+         
+          <input
+            type="url"
+            placeholder="Website URL"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+ <div>
+         
+          <input
+            type="number"
+            placeholder="No of impressions"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+        <div>
+          
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+
+        <div>
+         
+          <input
+            type="number"
+            placeholder="position"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+       
+<textarea
+                    rows={4}
+                    placeholder="Message"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+        <div className="pt-4">
+          <button
+            type="submit"
+            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors"
+          >
+            Submit 
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
+
+{/* Publisher Registration Modal */}
+{showPublisherModal && (
+ <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
+    <div className="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      {/* Header */}
+      <div className="bg-[#2fa4e7] px-6 py-4 flex justify-between items-center">
+        <h2 className="text-xl font-bold text-white">Register as Publisher</h2>
+        <button
+          onClick={() => setShowPublisherModal(false)}
+          className="text-white text-2xl hover:opacity-70"
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Form Content */}
+      <form className="p-6 space-y-4">
+        <div>
+         
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+  <div>
+         
+          <input
+            type="number"
+            placeholder="Contact Number"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+        <div>
+         
+          <input
+            type="url"
+            placeholder="Website URL"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+ <div>
+         
+          <input
+            type="number"
+            placeholder="No of impressions"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+        <div>
+          
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+
+        <div>
+         
+          <input
+            type="number"
+            placeholder="position"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
+            required
+          />
+        </div>
+       
+<textarea
+                    rows={4}
+                    placeholder="Message"
+                    className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
+                  />
+
+        <div className="pt-4">
+          <button
+            type="submit"
+            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors"
+          >
+            Submit 
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 )}

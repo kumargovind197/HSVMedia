@@ -52,32 +52,32 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
-      <div className="max-w-[1140px] mx-auto px-4">
+    <section id="contact" className="py-12 sm:py-16 md:py-24 bg-white">
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-[42px] font-normal text-[#337ab7] mb-4">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-[42px] font-normal text-[#337ab7] mb-3 sm:mb-4">
             Contact Us
           </h2>
-          <p className="text-[#666] text-lg font-light">
+          <p className="text-[#666] text-sm sm:text-base md:text-lg font-light">
            If you want to know more, Team HSV Media is at your disposal
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 
           {/* Left */}
-          <div className="text-[#666] space-y-6">
-            <h3 className="text-3xl font-normal text-[#337ab7]">Contact us</h3>
-            <p className="text-lg font-light">
+          <div className="text-[#666] space-y-4 sm:space-y-6">
+            <h3 className="text-2xl sm:text-3xl font-normal text-[#337ab7]">Contact us</h3>
+            <p className="text-sm sm:text-base md:text-lg font-light">
               Team HSV Media is ready to assist you
             </p>
 
-            <div className="flex items-start gap-4">
-              <MapPin size={36} className="text-[#2fa4e7]" />
+            <div className="flex items-start gap-3 sm:gap-4">
+              <MapPin size={24} className="text-[#2fa4e7] flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-slate-800 text-lg">
+                <h4 className="font-semibold text-slate-800 text-base sm:text-lg">
                   Team HSV Media
                 </h4>
               </div>
@@ -86,11 +86,11 @@ const ContactForm: React.FC = () => {
 
           {/* Form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full px-4 py-3 border rounded"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border rounded text-sm sm:text-base"
                 value={formData.surname}
                 onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
                 required
@@ -99,7 +99,7 @@ const ContactForm: React.FC = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full px-4 py-3 border rounded"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border rounded text-sm sm:text-base"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -108,26 +108,26 @@ const ContactForm: React.FC = () => {
               <input
                 type="text"
                 placeholder="Subject"
-                className="w-full px-4 py-3 border rounded"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border rounded text-sm sm:text-base"
                 value={formData.object}
                 onChange={(e) => setFormData({ ...formData, object: e.target.value })}
                 required
               />
 
               <textarea
-                rows={5}
+                rows={4}
                 placeholder="Message"
-                className="w-full px-4 py-3 border rounded resize-none"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border rounded resize-none text-sm sm:text-base"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
               />
 
-              <div className="text-right">
+              <div className="text-right pt-2">
                 <button
                   type="submit"
                   disabled={status !== 'idle'}
-                  className={`px-8 py-3 text-white rounded transition ${
+                  className={`px-6 sm:px-8 py-2 sm:py-3 text-white rounded transition text-sm sm:text-base font-semibold ${
                     status === 'success'
                       ? 'bg-green-500'
                       : 'bg-[#2fa4e7] hover:bg-[#258bd3]'
