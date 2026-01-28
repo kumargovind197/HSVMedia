@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
 
         {/* Logo - Visible on mobile, hidden on desktop */}
         <div className="block md:hidden mb-6 sm:mb-8">
-          <img src={logo} alt="HSV Media Logo" className="h-20 mx-auto" />
+          <img src={logo} alt="HSV Media Logo" className="h-21" />
         </div>
 
         {/* Main Headline */}
