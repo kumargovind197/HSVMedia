@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './assets/hsvlogo.png';
 
 const Hero: React.FC = () => {
   const handleScrollDown = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -12,6 +13,11 @@ const Hero: React.FC = () => {
   return (
     <section className="bg-[#2fa4e7] ad6-hero min-h-screen w-full flex flex-col justify-center items-center relative py-12 sm:py-16 md:py-20">
       <div className="text-center z-10 flex flex-col items-center justify-center max-w-4xl px-4 sm:px-6 md:px-8 pb-16 sm:pb-20 md:pb-24">
+
+        {/* Logo - Visible on mobile, hidden on desktop */}
+        <div className="block md:hidden mb-6 sm:mb-8">
+          <img src={logo} alt="HSV Media Logo" className="h-16 mx-auto" />
+        </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight tracking-tight">

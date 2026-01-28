@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from './assets/hsvlogo.png';
+// import logo from './assets/hsvlogo.png';
 import emailjs from 'emailjs-com';
 
 interface NavbarProps {
@@ -179,9 +179,9 @@ ${data.message || 'N/A'}
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
-          <div onClick={() => handleNavItemClick('home')} className="cursor-pointer">
+          {/* <div onClick={() => handleNavItemClick('home')} className="cursor-pointer">
             <img src={logo} alt="Logo" className="h-12" />
-          </div>
+          </div> */}
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center">
