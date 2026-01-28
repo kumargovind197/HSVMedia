@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight tracking-tight">
+        <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight tracking-tight">
           Your Performance-Driven Advertising Partner
         </h1>
 
