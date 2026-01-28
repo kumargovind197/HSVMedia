@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         </h1>
 
         {/* Subheading */}
-        <p className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base lg:text-lg text-white/80 max-w-3xl leading-relaxed">
+        <p className="mt-4 sm:mt-6 text-s sm:text-sm md:text-base lg:text-lg text-white/80 max-w-3xl leading-relaxed">
           Team HSV Media helps brands grow faster through smart, data-driven advertising.
           We capture attention, drive qualified traffic, and turn clicks into customers
           using high-impact banner ads, high-intent text ads, and strategically placed pop-up campaigns.

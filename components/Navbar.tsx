@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from './assets/hsvlogo.png';
+import emailjs from 'emailjs-com';
 
 interface NavbarProps {
   onNavigate: (page: string) => void;
@@ -11,8 +12,11 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [showPublisherModal, setShowPublisherModal] = useState(false);
-  const [showAdvertiserModal, setShowAdvertiserModal] = useState(false);
+
+const [showAdvertiserModal, setShowAdvertiserModal] = useState(false);
+const [showPublisherModal, setShowPublisherModal] = useState(false);
+
+const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -32,6 +36,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+useEffect(() => {
+  emailjs.init('YLAe7yU-qvpCmsQoF');
+}, []);
 
   const handleNavItemClick = (page: string, anchorId?: string) => {
     onNavigate(page);
@@ -55,6 +62,117 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const navClass =
     scrolled || isOpen ? 'bg-[#2fa4e7] shadow-lg py-0' : 'bg-transparent py-4';
 
+
+
+
+const [advertiserData, setAdvertiserData] = useState({
+  name: '',
+  company: '',
+  position: '',
+  phone: '',
+  email: '',
+  message: '',
+});
+
+const [publisherData, setPublisherData] = useState({
+  name: '',
+  phone: '',
+  website: '',
+  impressions: '',
+  email: '',
+  position: '',
+  message: '',
+});
+
+const handleAdvertiserSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  sendEmail(advertiserData, 'Advertiser', () => setShowAdvertiserModal(false));
+};
+
+const handlePublisherSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  sendEmail(publisherData, 'Publisher', () => setShowPublisherModal(false));
+};
+
+const sendEmail = (data: any, formType: 'Advertiser' | 'Publisher', onComplete: () => void) => {
+  setStatus('submitting');
+
+  // Format all data into a comprehensive message
+  let formattedMessage = `
+Form Type: ${formType}
+-----------------------------------
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone || 'N/A'}
+`;
+
+  if (formType === 'Advertiser') {
+    formattedMessage += `Company: ${data.company || 'N/A'}
+Position: ${data.position || 'N/A'}`;
+  } else if (formType === 'Publisher') {
+    formattedMessage += `Website: ${data.website || 'N/A'}
+Impressions: ${data.impressions || 'N/A'}
+Position: ${data.position || 'N/A'}`;
+  }
+
+  formattedMessage += `
+
+---------
+Message:
+${data.message || 'N/A'}
+`;
+
+  emailjs
+    .send(
+      'service_oquikwb',
+      'template_4r3x3kd',
+      {
+        surname: data.name,
+        email: data.email,
+        object: `New ${formType} Inquiry`,
+        message: formattedMessage,
+      },
+      'YLAe7yU-qvpCmsQoF'
+    )
+    .then(() => {
+      setStatus('success');
+      alert('Email sent successfully Thank you for reaching out!');
+      // Reset forms
+      if (formType === 'Advertiser') {
+        setAdvertiserData({
+          name: '',
+          company: '',
+          position: '',
+          phone: '',
+          email: '',
+          message: '',
+        });
+      } else {
+        setPublisherData({
+          name: '',
+          phone: '',
+          website: '',
+          impressions: '',
+          email: '',
+          position: '',
+          message: '',
+        });
+      }
+      setTimeout(() => {
+        setStatus('idle');
+        onComplete();
+      }, 1500);
+    })
+    .catch((err) => {
+      console.error('EmailJS Error:', err);
+      alert('Email failed  Please try again');
+      setStatus('idle');
+    });
+};
+
+
+    
   return (
     <nav ref={navRef} className={`fixed top-0 w-full z-50 transition-all duration-300 ${navClass}`}>
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
@@ -233,12 +351,17 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       </div>
 
       {/* Form Content */}
-      <form className="p-6 space-y-4">
+      <form  onSubmit={handleAdvertiserSubmit}
+       className="p-6 space-y-4">
         <div>
          
           <input
             type="text"
             placeholder="Name"
+              value={advertiserData.name}
+  onChange={(e) =>
+    setAdvertiserData({ ...advertiserData, name: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
@@ -248,6 +371,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           <input
             type="text"
             placeholder="Company Name"
+              value={advertiserData.company}
+  onChange={(e) =>
+    setAdvertiserData({ ...advertiserData, company: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
@@ -257,6 +384,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           <input
             type="text"
             placeholder="Position"
+              value={advertiserData.position}
+  onChange={(e) =>
+    setAdvertiserData({ ...advertiserData, position: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
@@ -269,6 +400,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           <input
             type="number"
             placeholder="Contact Number"
+              value={advertiserData.phone}
+  onChange={(e) =>
+    setAdvertiserData({ ...advertiserData, phone: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
@@ -279,6 +414,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           <input
             type="email"
             placeholder="Email Address"
+              value={advertiserData.email}
+  onChange={(e) =>
+    setAdvertiserData({ ...advertiserData, email: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
@@ -288,6 +427,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           <textarea
                     rows={4}
                     placeholder="Message"
+                      value={advertiserData.message}
+  onChange={(e) =>
+    setAdvertiserData({ ...advertiserData, message: e.target.value })
+  }
                     className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
                   />
 
@@ -299,9 +442,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
         <div className="pt-4">
           <button
             type="submit"
-            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors"
+            disabled={status === 'submitting'}
+            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Enquiry 
+            {status === 'submitting' ? 'Sending...' : 'Send Enquiry'}
           </button>
         </div>
       </form>
@@ -325,58 +469,77 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       </div>
 
       {/* Form Content */}
-      <form className="p-6 space-y-4">
+      <form onSubmit={handlePublisherSubmit}
+      className="p-6 space-y-4">
         <div>
-         
           <input
             type="text"
             placeholder="Name"
+              value={publisherData.name}
+  onChange={(e) =>
+    setPublisherData({ ...publisherData, name: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
         </div>
   <div>
-         
           <input
             type="number"
             placeholder="Contact Number"
+              value={publisherData.phone}
+  onChange={(e) =>
+    setPublisherData({ ...publisherData, phone: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
         </div>
         <div>
-         
           <input
             type="url"
             placeholder="Website URL"
+              value={publisherData.website}
+  onChange={(e) =>
+    setPublisherData({ ...publisherData, website: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
         </div>
  <div>
-         
           <input
             type="number"
             placeholder="No of impressions"
+              value={publisherData.impressions}
+  onChange={(e) =>
+    setPublisherData({ ...publisherData, impressions: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
         </div>
         <div>
-          
           <input
             type="email"
             placeholder="Email Address"
+              value={publisherData.email}
+  onChange={(e) =>
+    setPublisherData({ ...publisherData, email: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
         </div>
 
         <div>
-         
           <input
-            type="number"
-            placeholder="position"
+            type="text"
+            placeholder="Position"
+              value={publisherData.position}
+  onChange={(e) =>
+    setPublisherData({ ...publisherData, position: e.target.value })
+  }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
             required
           />
@@ -385,107 +548,20 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
 <textarea
                     rows={4}
                     placeholder="Message"
+                      value={publisherData.message}
+  onChange={(e) =>
+    setPublisherData({ ...publisherData, message: e.target.value })
+  }
                     className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
                   />
 
         <div className="pt-4">
           <button
             type="submit"
-            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors"
+            disabled={status === 'submitting'}
+            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit 
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-)}
-
-{/* Publisher Registration Modal */}
-{showPublisherModal && (
- <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
-    <div className="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-      {/* Header */}
-      <div className="bg-[#2fa4e7] px-6 py-4 flex justify-between items-center">
-        <h2 className="text-xl font-bold text-white">Register as Publisher</h2>
-        <button
-          onClick={() => setShowPublisherModal(false)}
-          className="text-white text-2xl hover:opacity-70"
-        >
-          ×
-        </button>
-      </div>
-
-      {/* Form Content */}
-      <form className="p-6 space-y-4">
-        <div>
-         
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
-            required
-          />
-        </div>
-  <div>
-         
-          <input
-            type="number"
-            placeholder="Contact Number"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
-            required
-          />
-        </div>
-        <div>
-         
-          <input
-            type="url"
-            placeholder="Website URL"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
-            required
-          />
-        </div>
- <div>
-         
-          <input
-            type="number"
-            placeholder="No of impressions"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
-            required
-          />
-        </div>
-        <div>
-          
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
-            required
-          />
-        </div>
-
-        <div>
-         
-          <input
-            type="number"
-            placeholder="position"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2fa4e7]"
-            required
-          />
-        </div>
-       
-<textarea
-                    rows={4}
-                    placeholder="Message"
-                    className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
-                  />
-
-        <div className="pt-4">
-          <button
-            type="submit"
-            className="w-full bg-[#2fa4e7] text-white font-bold py-2 rounded-lg hover:bg-[#2691cc] transition-colors"
-          >
-            Submit 
+            {status === 'submitting' ? 'Sending...' : 'Submit'}
           </button>
         </div>
       </form>
