@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 import { Share2, Globe, Target, Coins, Headset, ArrowUp, Monitor, Lock, User, CheckCircle, Building2, Settings, Layout, TrendingUp, Smile, Store, Award, Users, Newspaper, Bot, Trophy, Music, MessageCircle, ShieldCheck, ScanFace, LineChart, X, Mail, Loader2 } from 'lucide-react';
 import { RevealOnScroll } from './RevealOnScroll';
 
@@ -217,7 +218,7 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
             <h3 className="text-xl font-semibold mb-4">
               Banner Advertising
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-lg text-gray-600 mb-4">
             
 Our banner ad placements are designed to stop the scroll and build brand recognition while driving clicks.
 
@@ -287,7 +288,7 @@ Wide Vertical Banner ( 160 x 400 )<br />
       <div className="grid md:grid-cols-2 gap-12 items-center">
 
         <div>
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Performance & Optimization
           </h2>
           <p className="text-gray-600 mb-4">
@@ -319,7 +320,7 @@ Wide Vertical Banner ( 160 x 400 )<br />
 
     {/* CTA */}
     <section className="py-20 text-center bg-[#2fa4e7] text-white">
-      <h2 className="text-3xl font-bold mb-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
         Ready to Grow With Team HSV Media?
       </h2>
       
@@ -339,13 +340,95 @@ Wide Vertical Banner ( 160 x 400 )<br />
 export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
   const [openModal, setOpenModal] = useState<"publisher" | "advertiser" | null>(null);
 
+  const [pageAdvertiserData, setPageAdvertiserData] = useState({
+    name: '',
+    company: '',
+    position: '',
+    phone: '',
+    email: '',
+    message: '',
+  });
+
+  const [pagePublisherData, setPagePublisherData] = useState({
+    name: '',
+    phone: '',
+    website: '',
+    impressions: '',
+    email: '',
+    position: '',
+    message: '',
+  });
+
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  useEffect(() => {
+    emailjs.init('YLAe7yU-qvpCmsQoF');
+  }, []);
+
+  const sendPageEmail = (data: any, formType: 'Advertiser' | 'Publisher', onComplete: () => void) => {
+    setStatus('submitting');
+
+    let formattedMessage = `\nForm Type: ${formType}\n-----------------------------------\n\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || 'N/A'}\n`;
+
+    if (formType === 'Advertiser') {
+      formattedMessage += `Company: ${data.company || 'N/A'}\nPosition: ${data.position || 'N/A'}`;
+    } else {
+      formattedMessage += `Website: ${data.website || 'N/A'}\nImpressions: ${data.impressions || 'N/A'}\nPosition: ${data.position || 'N/A'}`;
+    }
+
+    formattedMessage += `\n\n-----------------------------------\nMessage:\n${data.message || 'N/A'}\n`;
+
+    emailjs
+      .send(
+        'service_oquikwb',
+        'template_4r3x3kd',
+        {
+          surname: data.name,
+          email: data.email,
+          object: `New ${formType} Inquiry`,
+          message: formattedMessage,
+        },
+        'YLAe7yU-qvpCmsQoF'
+      )
+      .then(() => {
+        setStatus('success');
+        alert('Email sent successfully ');
+
+        if (formType === 'Advertiser') {
+          setPageAdvertiserData({ name: '', company: '', position: '', phone: '', email: '', message: '' });
+        } else {
+          setPagePublisherData({ name: '', phone: '', website: '', impressions: '', email: '', position: '', message: '' });
+        }
+
+        setTimeout(() => {
+          setStatus('idle');
+          onComplete();
+        }, 1500);
+      })
+      .catch((err) => {
+        console.error('EmailJS Error:', err);
+        alert('Email failed Please try again');
+        setStatus('idle');
+      });
+  };
+
+  const handlePageAdvertiserSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendPageEmail(pageAdvertiserData, 'Advertiser', () => setOpenModal(null));
+  };
+
+  const handlePagePublisherSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendPageEmail(pagePublisherData, 'Publisher', () => setOpenModal(null));
+  };
+
   return (
     <div className="bg-white">
 
       {/* Hero */}
       <section className="bg-[#2fa4e7] pt-32 pb-24 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
          Team HSV Media
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
@@ -356,7 +439,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
 
       {/* Intro */}
       <section className="max-w-6xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
           Built for Serious Publishers
         </h2>
         <p className="text-gray-600 text-lg max-w-4xl mx-auto">
@@ -407,7 +490,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
 
       {/* Control Statement */}
       <section className="max-w-5xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
           You Control What Appears on Your Website
         </h2>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto">
@@ -418,7 +501,7 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
 
       {/* CTA with 2 buttons */}
       <section className="py-20 bg-gray-50 text-center">
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
          You decide which ads appear on your site.
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-10">
@@ -460,54 +543,67 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
                 <h3 className="text-2xl font-semibold mb-6">
                   Register as a Publisher
                 </h3>
-                <div className="space-y-5">
+                <form onSubmit={handlePagePublisherSubmit} className="space-y-5">
 
-                  
- <input
+                  <input
                     type="text"
-                    placeholder=" Name"
+                    placeholder="Name"
+                    value={pagePublisherData.name}
+                    onChange={(e) => setPagePublisherData({ ...pagePublisherData, name: e.target.value })}
+                    required
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
-                   <input
-                    type="number"
+                  <input
+                    type="text"
                     placeholder="Contact Number"
+                    value={pagePublisherData.phone}
+                    onChange={(e) => setPagePublisherData({ ...pagePublisherData, phone: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
-                   <input
+                  <input
                     type="text"
                     placeholder="Website URL"
+                    value={pagePublisherData.website}
+                    onChange={(e) => setPagePublisherData({ ...pagePublisherData, website: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
-                   <input
-                    type="number"
+                  <input
+                    type="text"
                     placeholder="No of monthly impressions"
+                    value={pagePublisherData.impressions}
+                    onChange={(e) => setPagePublisherData({ ...pagePublisherData, impressions: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
-                  <br />
-                 
 
                   <input
                     type="email"
                     placeholder="Email address"
+                    value={pagePublisherData.email}
+                    onChange={(e) => setPagePublisherData({ ...pagePublisherData, email: e.target.value })}
+                    required
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
 
                   <input
                     type="text"
                     placeholder="Position"
+                    value={pagePublisherData.position}
+                    onChange={(e) => setPagePublisherData({ ...pagePublisherData, position: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
 
                   <textarea
                     rows={4}
                     placeholder="Message"
+                    value={pagePublisherData.message}
+                    onChange={(e) => setPagePublisherData({ ...pagePublisherData, message: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
                   />
 
-                  <button className="w-full bg-[#2fa4e7] text-white py-3 rounded-md font-semibold hover:bg-[#258bd3] transition">
-                    Submit
+                  <button type="submit" disabled={status === 'submitting'} className={`w-full bg-[#2fa4e7] text-white py-3 rounded-md font-semibold hover:bg-[#258bd3] transition ${status === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''}`}>
+                    {status === 'submitting' ? 'Sending...' : 'Submit'}
                   </button>
-                </div>
+                </form>
               </>
             )}
 
@@ -517,44 +613,58 @@ export const PublishersPage: React.FC<PageProps> = ({ onNavigate }) => {
                   Want to Advertise With Us?
                 </h3>
 
-                <div className="space-y-5">
+                <form onSubmit={handlePageAdvertiserSubmit} className="space-y-5">
                   <input
                     type="text"
                     placeholder="Name"
+                    value={pageAdvertiserData.name}
+                    onChange={(e) => setPageAdvertiserData({ ...pageAdvertiserData, name: e.target.value })}
+                    required
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
-<input
+                  <input
                     type="text"
                     placeholder="Company name"
+                    value={pageAdvertiserData.company}
+                    onChange={(e) => setPageAdvertiserData({ ...pageAdvertiserData, company: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
                   <input
                     type="text"
                     placeholder="Position"
+                    value={pageAdvertiserData.position}
+                    onChange={(e) => setPageAdvertiserData({ ...pageAdvertiserData, position: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
 
                   <input
-                    type="number"
+                    type="text"
                     placeholder="Contact number"
+                    value={pageAdvertiserData.phone}
+                    onChange={(e) => setPageAdvertiserData({ ...pageAdvertiserData, phone: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
                   <input
                     type="email"
                     placeholder="Email address"
+                    value={pageAdvertiserData.email}
+                    onChange={(e) => setPageAdvertiserData({ ...pageAdvertiserData, email: e.target.value })}
+                    required
                     className="w-full border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:border-[#2fa4e7]"
                   />
 
                   <textarea
                     rows={4}
                     placeholder="Message"
+                    value={pageAdvertiserData.message}
+                    onChange={(e) => setPageAdvertiserData({ ...pageAdvertiserData, message: e.target.value })}
                     className="w-full border border-gray-300 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#2fa4e7]"
                   />
 
-                  <button className="w-full bg-gray-900 text-white py-3 rounded-md font-semibold hover:bg-gray-800 transition">
-                    Send Enquiry
+                  <button type="submit" disabled={status === 'submitting'} className={`w-full bg-gray-900 text-white py-3 rounded-md font-semibold hover:bg-gray-800 transition ${status === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''}`}>
+                    {status === 'submitting' ? 'Sending...' : 'Send Enquiry'}
                   </button>
-                </div>
+                </form>
               </>
             )}
           </div>
