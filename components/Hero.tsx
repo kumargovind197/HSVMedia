@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       <div className="text-center z-10 flex flex-col items-center justify-center max-w-4xl px-4 sm:px-6 md:px-8 pb-16 sm:pb-20 md:pb-24">
 
         {/* Main Headline */}
-        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight tracking-tight">
+        <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight tracking-tight">
           Your Performance-Driven Advertising Partner
         </h1>
 
