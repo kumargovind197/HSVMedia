@@ -186,11 +186,11 @@ export const AdvertisersPage: React.FC<PageProps> = ({ onNavigate }) => (
           Our Advertising Solutions
         </h1>
 
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto">
-         
-          We connect your business with the right audience using data-led
-          strategies that drive traffic, engagement, and measurable results.
-        </p>
+      <p className="text-base text-white/90 max-w-3xl mx-auto">
+  We connect your business with the right audience using data-led
+  strategies that drive traffic, engagement, and measurable results.
+</p>
+
 
         <button
           onClick={() => onNavigate?.('contact')}
